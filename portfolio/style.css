@@ -1,0 +1,110 @@
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+@font-face {
+  font-family: Merriweather;
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Merriweather/Merriweather-Bold.ttf");
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: Inter, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container.header {
+  height: 90px;
+  display: flex;
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container.header a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.container.header a:hover {
+  color: #bdae82;
+  transition: color 0.5s;
+}
+
+.current {
+  color: #bdae82;
+}
+
+.language {
+  width: 70px;
+  height: 50px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  transition: filter 0.5s;
+}
+
+.logo:hover {
+  filter: invert(72%) sepia(41%) saturate(253%) hue-rotate(7deg) brightness(91%) contrast(85%);
+  transition: filter 0.5s;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav ul {
+  width: 500px;
+  height: 50px;
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
