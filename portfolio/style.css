@@ -66,6 +66,19 @@ h2 {
   line-height: 80px;
 }
 
+h3 {
+
+}
+
+h4 {
+  color: var(--color-white);
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
 .button {
   background-color: var(--color-gold);
   border: 0;
@@ -187,6 +200,35 @@ p {
   justify-content: space-evenly;
 }
 
+.skill-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1400px;
+  height: 242px;
+  margin-top: 60px;
+  margin-left: 0;
+}
+
+.skill-item {
+  width: 320px;
+  height: 240px;
+  text-align: center;
+}
+
+.skill-item p {
+  font-size: 18px;
+  line-height: 36px;
+  text-align: center;
+  width: 280px;
+  margin: 0 auto;
+}
+
+.skill-item img {
+  margin-bottom: 20px;
+}
+
 .skills {
   padding-top: 10px;
+  height: 482px;
 }
