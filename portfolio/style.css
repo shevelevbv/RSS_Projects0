@@ -29,6 +29,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *, *::before, *::after {
@@ -230,6 +231,29 @@ p {
   justify-content: space-evenly;
 }
 
+.play {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.play img {
+  transition: filter 0.3s;
+}
+
+.play img:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+  transition: filter 0.3s;
+}
+
+.play-button {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+}
+
 .portfolio {
   margin-top: 10px;
 }
@@ -269,4 +293,13 @@ p {
 .skills {
   padding-top: 10px;
   height: 482px;
+}
+
+.thumbnail {
+  width: 1400px;
+  height: 705px;
+  margin: 60px auto 100px auto;
+  background-image: url("./img/jpg/video-player.jpg");
+  display: flex;
+  align-items: center;
 }
