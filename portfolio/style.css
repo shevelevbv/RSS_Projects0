@@ -59,7 +59,6 @@ h2 {
   font-family: Merriweather, Helvetica, sans-serif;
   font-size: var(--font2);
   text-align: center;
-  line-height: 120px;
   margin: 0 auto;
   width: 152px;
   height: 80px;
@@ -82,11 +81,26 @@ h4 {
 .button {
   background-color: var(--color-gold);
   border: 0;
+  color: var(--color-black);
   cursor: pointer;
   font-family: inherit;
   font-size: 20px;
   width: 220px;
   height: 55px;
+}
+
+.button.other {
+  background-color: var(--color-black);
+  border: 2px solid var(--color-gold);
+  color: var(--color-gold);
+}
+
+.button-container {
+  width: 895px;
+  margin: 60px auto 50px auto;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
 }
 
 .container {
@@ -153,6 +167,22 @@ p {
   padding-top: 10px;
 }
 
+.img {
+  width: 450px;
+  height: 560px;
+}
+
+.img-container {
+  width: 1400px;
+  height: 1145px;
+  margin: 60px auto 100px auto;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 25px;
+}
+
 .info {
   width: 490px;
   height: 330px;
@@ -200,6 +230,14 @@ p {
   justify-content: space-evenly;
 }
 
+.portfolio {
+  margin-top: 10px;
+}
+
+.portfolio h2 {
+  width: 218px;
+}
+
 .skill-container {
   display: flex;
   justify-content: space-between;
@@ -207,7 +245,7 @@ p {
   width: 1400px;
   height: 242px;
   margin-top: 60px;
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .skill-item {
