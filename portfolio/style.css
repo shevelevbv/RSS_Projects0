@@ -27,21 +27,22 @@
   --font2: 40px;
 }
 
-::placeholder {
-  color: var(--color-gold);
-  font-family: Inter, Helvetica, sans-serif;
-  font-size: 20px;
-  line-height: 43px;
-  text-indent: 16px;
-}
-
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
+}
+
+::placeholder {
+  color: var(--color-gold);
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 27px;
 }
 
 body {
@@ -107,6 +108,7 @@ textarea {
   width: 450px;
   height: 50px;
   margin-bottom: 20px;
+  padding-left: 18px;
 }
 
 input:focus,
@@ -114,12 +116,8 @@ textarea:focus {
   color: var(--color-gold);
   font-family: inherit;
   font-size: 20px;
-  padding-left: 20px;
+  padding-left: 18px;
   outline: none;
-}
-
-textarea:focus {
-  padding-top: 10px;
 }
 
 input:focus::placeholder,
@@ -130,7 +128,11 @@ textarea:focus::placeholder {
 textarea {
   height: 100px;
   resize: none;
-  padding-top: 2px;
+  padding-top: 10px;
+}
+
+textarea:focus {
+  padding-top: 10px;
 }
 
 ul {
@@ -233,7 +235,7 @@ p {
 }
 
 .container-header {
-  background: url('./img/jpg/bg.jpg');
+  background: url("./img/jpg/bg.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
 }
@@ -250,7 +252,7 @@ p {
 }
 
 .current {
-  color: var(--color-gold)
+  color: var(--color-gold);
 }
 
 .footer-center a {
@@ -319,11 +321,17 @@ p {
 .h2-wrapper {
   width: 50%;
   margin: 0 auto;
-  background-image: linear-gradient(to top, var(--color-black) 39px, var(--color-gold) 39px, var(--color-gold) 41px, var(--color-black) 41px);
+  background-image: linear-gradient(
+    to top,
+    var(--color-black) 39px,
+    var(--color-gold) 39px,
+    var(--color-gold) 41px,
+    var(--color-black) 41px
+  );
 }
 
 .hero-container {
-  background-image: url('./img/jpg/bg.jpg');
+  background-image: url("./img/jpg/bg.jpg");
   background-position: center -90px;
   background-repeat: no-repeat;
   margin: 0 auto;
@@ -366,6 +374,18 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.language a {
+  width: 19px;
+}
+
+.language .current {
+  width: 25px;
+}
+
+.language .slash {
+  width: 7px;
 }
 
 .logo {
