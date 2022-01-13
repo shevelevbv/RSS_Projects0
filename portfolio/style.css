@@ -27,6 +27,14 @@
   --font2: 40px;
 }
 
+::placeholder {
+  color: var(--color-gold);
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 43px;
+  text-indent: 16px;
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -44,6 +52,11 @@ body {
   justify-content: space-between;
   font-family: Inter, Helvetica, sans-serif;
   font-weight: 400;
+}
+
+form {
+  margin-top: 40px;
+  margin-left: 20px;
 }
 
 h1 {
@@ -83,6 +96,21 @@ h4 {
   margin-bottom: 20px;
 }
 
+input,
+textarea {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--color-gold);
+  display: block;
+  width: 450px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
 ul {
   list-style-type: none;
 }
@@ -105,14 +133,22 @@ ul {
   cursor: pointer;
   font-family: inherit;
   font-size: 20px;
+  transition: 0.3s;
   width: 220px;
   height: 55px;
+}
+
+.button:hover,
+.button.other:hover {
+  color: var(--color-white);
+  transition: 0.3s;
 }
 
 .button.other {
   background-color: var(--color-black);
   border: 2px solid var(--color-gold);
   color: var(--color-gold);
+  transition: 0.3s;
 }
 
 .button-container {
@@ -121,6 +157,10 @@ ul {
   display: flex;
   justify-content: space-between;
   padding-left: 0;
+}
+
+form .button {
+  margin-top: 10px;
 }
 
 .card {
@@ -132,6 +172,22 @@ ul {
 
 .card button {
   margin: 0 auto;
+}
+
+.contacts {
+  background-image: url("./img/jpg/contacts.jpg");
+  width: 1440px;
+  height: 700px;
+  margin-left: -20px;
+  padding-top: 60px;
+  padding-left: 950px;
+}
+
+.contacts h2 {
+  background-color: transparent;
+  width: 450px;
+  height: 80px;
+  text-align: left;
 }
 
 .container {
