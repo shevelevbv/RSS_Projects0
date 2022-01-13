@@ -115,10 +115,7 @@ textarea {
 
 ul {
   list-style-type: none;
-}
-
-footer {
-  height: 150px;
+  padding-left: 0;
 }
 
 .benefits {
@@ -139,7 +136,7 @@ footer {
   cursor: pointer;
   font-family: inherit;
   font-size: 20px;
-  transition: 0.3s;
+  transition: color 0.3s;
   width: 220px;
   height: 55px;
 }
@@ -147,14 +144,14 @@ footer {
 .button:hover,
 .button.other:hover {
   color: var(--color-white);
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 .button.other {
   background-color: var(--color-black);
   border: 2px solid var(--color-gold);
   color: var(--color-gold);
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 .button-container {
@@ -162,7 +159,6 @@ footer {
   margin: 60px auto 50px auto;
   display: flex;
   justify-content: space-between;
-  padding-left: 0;
 }
 
 form .button {
@@ -237,6 +233,69 @@ p {
   color: var(--color-gold)
 }
 
+.footer-center a {
+  display: block;
+  padding-left: 19px;
+}
+
+.footer-container {
+  display: flex;
+  height: 150px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  width: 168px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-center a,
+.footer-left a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.footer-center a:hover,
+.footer-left a:hover {
+  color: var(--color-gold);
+  transition: color 0.3s;
+}
+
+.footer-right {
+  width: 188px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-right li {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-right a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 0.3s;
+}
+
+.footer-right a:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+  transition: filter 0.3s;
+}
+
 .h2-wrapper {
   width: 50%;
   margin: 0 auto;
@@ -269,7 +328,6 @@ p {
   width: 1400px;
   height: 1145px;
   margin: 60px auto 100px auto;
-  padding-left: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 25px;
@@ -314,7 +372,7 @@ p {
 }
 
 .nav ul {
-  width: 540px;
+  width: 500px;
   height: 50px;
   text-decoration: none;
   display: flex;
@@ -375,7 +433,6 @@ p {
   width: 1400px;
   height: 242px;
   margin-top: 60px;
-  padding-left: 0;
 }
 
 .skill-item {
