@@ -67,7 +67,11 @@ h2 {
 }
 
 h3 {
-
+  color: var(--color-white);
+  font-family: Merriweather, Helvetica, sans-serif;
+  font-size: 28px;
+  line-height: 56px;
+  margin-bottom: 21px;
 }
 
 h4 {
@@ -77,6 +81,21 @@ h4 {
   line-height: 40px;
   font-weight: 700;
   margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.benefits {
+  padding-left: 0;
+  margin-bottom: 38px;
+}
+
+.benefits li {
+  color: var(--color-white);
+  font-size: 18px;
+  line-height: 36px;
 }
 
 .button {
@@ -102,6 +121,17 @@ h4 {
   display: flex;
   justify-content: space-between;
   padding-left: 0;
+}
+
+.card {
+  width: 450px;
+  border: 2px solid var(--color-gold);
+  padding: 13px;
+  text-align: center;
+}
+
+.card button {
+  margin: 0 auto;
 }
 
 .container {
@@ -225,7 +255,6 @@ p {
   width: 540px;
   height: 50px;
   text-decoration: none;
-  list-style-type: none;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -251,7 +280,6 @@ p {
 .play-button {
   width: 130px;
   height: 130px;
-  margin: 0 auto;
 }
 
 .portfolio {
@@ -260,6 +288,22 @@ p {
 
 .portfolio h2 {
   width: 218px;
+}
+
+.price-cards {
+  width: 1400px;
+  height: 505px;
+  display: flex;
+  justify-content: space-between;
+  margin: 60px auto 100px auto;
+  padding-left: 0;
+}
+
+.rate {
+  color: var(--color-gold);
+  font-size: 24px;
+  line-height: 48px;
+  margin-top: 0;
 }
 
 .skill-container {
@@ -300,6 +344,6 @@ p {
   height: 705px;
   margin: 60px auto 100px auto;
   background-image: url("./img/jpg/video-player.jpg");
-  display: flex;
-  align-items: center;
+  padding-left: 630px;
+  padding-top: 287px;
 }
