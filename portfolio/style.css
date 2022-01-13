@@ -91,9 +91,9 @@ h4 {
   color: var(--color-white);
   font-family: Inter, Helvetica, sans-serif;
   font-size: 20px;
-  line-height: 40px;
+  line-height: 38px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 input,
@@ -101,6 +101,7 @@ textarea {
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid var(--color-gold);
   color: var(--color-gold);
+  font-family: inherit;
   font-size: 20px;
   display: block;
   width: 450px;
@@ -108,9 +109,28 @@ textarea {
   margin-bottom: 20px;
 }
 
+input:focus,
+textarea:focus {
+  color: var(--color-gold);
+  font-family: inherit;
+  font-size: 20px;
+  padding-left: 20px;
+  outline: none;
+}
+
+textarea:focus {
+  padding-top: 10px;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
 textarea {
   height: 100px;
   resize: none;
+  padding-top: 2px;
 }
 
 ul {
@@ -372,7 +392,7 @@ p {
 }
 
 .nav ul {
-  width: 500px;
+  width: 501px;
   height: 50px;
   text-decoration: none;
   display: flex;
@@ -408,6 +428,10 @@ p {
 
 .portfolio h2 {
   width: 218px;
+}
+
+.price h2 {
+  width: 142px;
 }
 
 .price-cards {
@@ -465,4 +489,8 @@ p {
   background-image: url("./img/jpg/video-player.jpg");
   padding-left: 630px;
   padding-top: 287px;
+}
+
+.video h2 {
+  width: 158px;
 }
