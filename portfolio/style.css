@@ -141,14 +141,21 @@ ul {
 }
 
 .benefits {
-  padding-left: 0;
-  margin-bottom: 38px;
+  width: 364px;
+  height: 180px;
+  margin: 0 auto 38px auto;
+  display: flex;
+  flex-direction: column;
+  
 }
 
-.benefits li {
+.benefits span {
   color: var(--color-white);
   font-size: 18px;
   line-height: 36px;
+  display: block;
+  height: 36px;
+  margin: 0 auto;
 }
 
 .button {
@@ -189,8 +196,8 @@ form .button {
 
 .card {
   width: 450px;
-  border: 2px solid var(--color-gold);
-  padding: 13px;
+  border: 3px solid var(--color-gold);
+  padding: 12px 0 10px 0;
   text-align: center;
 }
 
