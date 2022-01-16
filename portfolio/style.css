@@ -118,6 +118,7 @@ textarea:focus {
   font-size: 20px;
   padding-left: 18px;
   outline: none;
+  border-color: var(--color-white);
 }
 
 input:focus::placeholder,
@@ -143,7 +144,7 @@ ul {
 .benefits {
   width: 364px;
   height: 180px;
-  margin: 0 auto 38px auto;
+  margin: 0 auto 39px auto;
   display: flex;
   flex-direction: column;
   
@@ -155,7 +156,6 @@ ul {
   line-height: 36px;
   display: block;
   height: 36px;
-  margin: 0 auto;
 }
 
 .button {
@@ -185,7 +185,7 @@ ul {
 
 .button-container {
   width: 895px;
-  margin: 60px auto 50px auto;
+  margin: 60px auto 50px 252px;
   display: flex;
   justify-content: space-between;
 }
@@ -454,7 +454,8 @@ p {
 }
 
 .portfolio h2 {
-  width: 218px;
+  width: 221px;
+  margin-left: 238px;
 }
 
 .price h2 {
@@ -475,6 +476,7 @@ p {
   font-size: 24px;
   line-height: 48px;
   margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .skill-container {
@@ -519,5 +521,6 @@ p {
 }
 
 .video h2 {
-  width: 158px;
+  width: 156px;
+  margin-left: 273px;
 }
