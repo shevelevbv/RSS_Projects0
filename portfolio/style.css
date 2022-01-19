@@ -560,6 +560,11 @@ p {
     row-gap: 5px;
   }
 
+  .card {
+    width: 420px;
+    height: 505px;
+  }
+
   .container {
     width: 100%;
     padding: 0;
@@ -641,6 +646,19 @@ p {
   .portfolio h2 {
     width: 185px;
     margin: 0 auto;
+  }
+
+  .price h2 {
+    width: 124px;
+  }
+
+  .price-cards {
+    width: 420px;
+    height: 1665px;
+    margin: 50px auto 60px auto;
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 0;
   }
 
   .skill-item img {
