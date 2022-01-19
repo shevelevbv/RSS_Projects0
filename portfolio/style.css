@@ -609,7 +609,7 @@ p {
   .img-container {
     width: 450px;
     height: 3485px;
-    margin: 60px auto 100px auto;
+    margin: 60px auto 80px auto;
     display: grid;
     grid-template-columns: 100%;
     row-gap: 25px;
@@ -622,6 +622,16 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
+  }
+
+  .play-button {
+    width: 75px;
+    height: 75px;
+  }
+
+  .play-button img {
+    width: 65px;
+    height: 65px;
   }
 
   .portfolio {
@@ -639,4 +649,19 @@ p {
 
   .skill-item p {
     line-height: 22px;
+  }
+
+  .thumbnail {
+    width: auto;
+    height: 418px;
+    background-image: url("./img/jpg/video-player1.jpg");
+    background-repeat: no-repeat;
+    margin: 50px auto 80px auto;
+    padding-top: 176px;
+    padding-left: 344px;
+  }
+
+  .video h2 {
+    width: 130px;
+    margin: 0 auto;
   }
