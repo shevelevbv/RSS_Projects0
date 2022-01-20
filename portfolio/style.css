@@ -602,6 +602,19 @@ p {
     background-size: auto 620px;
   }
 
+  .footer-container{
+    width: 100%;
+    height: 190px;
+    padding-top: 15px;
+    padding-bottom: 12px;
+    flex-direction: column;
+  }
+
+  .footer-center {
+    width: 248px;
+    line-height: 24.2px;
+  }
+
   .h2-wrapper {
     width: 47.5%;
     height: 80px;
