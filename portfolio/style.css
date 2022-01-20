@@ -15,18 +15,16 @@
 @font-face {
   font-family: Merriweather;
   font-style: normal;
-  font-weight: 700;
-  src: url("./fonts/Merriweather/Merriweather-Bold.ttf");
+  font-weight: 400;
+  src: url("./fonts/Merriweather/Merriweather-Regular.ttf");
 }
 
 @font-face {
   font-family: Merriweather;
   font-style: normal;
-  font-weight: 400;
-  src: url("./fonts/Merriweather/Merriweather-Regular.ttf");
+  font-weight: 700;
+  src: url("./fonts/Merriweather/Merriweather-Bold.ttf");
 }
-
-
 
 :root {
   --color-gold: #bdae82;
@@ -583,6 +581,21 @@ html {
     row-gap: 5px;
   }
 
+  .burger {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .line1,
+  .line2,
+  .line3 {
+    height: 3px;
+    background-color: var(--color-white);
+  }
+
   .c {
     width: 19px;
   }
@@ -620,7 +633,7 @@ html {
   }
 
   .container-header.header {
-    padding: 0 60px;
+    padding: 0 64px 0 60px;
   }
 
   .footer-container{
@@ -686,6 +699,21 @@ html {
     display: grid;
     grid-template-columns: 100%;
     row-gap: 25px;
+  }
+
+  .language {
+    margin-left: auto;
+    margin-right: 22px;
+    width: 80px;
+  }
+
+  .current {
+    width: 25px;
+  }
+
+  .slash {
+    width: 9px;
+    margin-right: 12px;
   }
 
   .skill-container {
