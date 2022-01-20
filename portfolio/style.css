@@ -526,6 +526,15 @@ p {
 }
 
 @media (max-width: 768px) {
+
+  form {
+    width: 450px;
+    text-align: center;
+  }
+
+  form .button {
+    margin-top: 10px;
+  }
   
   h1 {
     font-size: 32px;
@@ -563,6 +572,23 @@ p {
   .card {
     width: 420px;
     height: 505px;
+  }
+
+  .contacts {
+    background-image: url("./img/jpg/contacts1.jpg");
+    width: 100%;
+    height: 600px;
+    padding-top: 44px;
+    padding-left: 139px;
+    margin: 0 auto;
+  }
+
+  .contacts h2 {
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 16px;
+    height: 64px;
+    line-height: 64px;
   }
 
   .container {
@@ -655,7 +681,7 @@ p {
   .price-cards {
     width: 420px;
     height: 1665px;
-    margin: 50px auto 60px auto;
+    margin: 50px auto 30px auto;
     display: grid;
     grid-template-columns: 100%;
     row-gap: 0;
