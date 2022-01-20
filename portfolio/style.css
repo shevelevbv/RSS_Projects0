@@ -584,9 +584,11 @@ html {
   .burger {
     width: 50px;
     height: 50px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    z-index: 100;
   }
 
   .line1,
@@ -594,6 +596,56 @@ html {
   .line3 {
     height: 3px;
     background-color: var(--color-white);
+    transition: background-color 0.3s, transform 0.5s cubic-bezier(0.01,0.6,0.4,0.2),
+    opacity 0.7s ease;
+  }
+
+  .burger:hover .line1,
+  .burger:hover .line2,
+  .burger:hover .line3 {
+    background-color: var(--color-gold);
+    transition: background-color 0.3s, transform 0.5s cubic-bezier(0.01,0.6, 0.4,0.2),
+    opacity 0.7s ease;
+  }
+
+  .open .line1 {
+    width: 62px;
+    transform: rotate(45deg) translate(6px, 16px);
+  }
+
+  .open .line2 {
+    opacity: 0;
+  }
+
+  .open .line3 {
+    width: 62px;
+    transform: rotate(-45deg) translate(5px, -13px);
+  }
+
+  .nav {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 620px;
+    height: 1024px;
+    padding-top: 128px;
+    padding-left: 127px;
+  }
+
+  .nav ul {
+    color: var(--color-white);
+    width: 150px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .nav li {
+    font-size: 35px;
   }
 
   .c {
@@ -669,10 +721,6 @@ html {
       var(--color-gold) 41px,
       var(--color-black) 41px
     );
-  }
-
-  .nav {
-    display: none;
   }
 
   .hero-container {
