@@ -44,6 +44,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 1440px) {
@@ -586,7 +587,7 @@ html {
 
   .burger {
     width: 50px;
-    height: 50px;
+    height: 48px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -603,22 +604,16 @@ html {
     opacity 0.7s ease;
   }
 
-  .burger:hover .line1,
-  .burger:hover .line2,
-  .burger:hover .line3 {
-    background-color: var(--color-gold);
-    transition: background-color 0.3s, transform 0.4s cubic-bezier(0.01,0.6, 0.4,0.2),
-    opacity 0.7s ease;
+  @media not all and (hover:none) {
+    .burger:hover .line1,
+    .burger:hover .line2,
+    .burger:hover .line3 {
+      background-color: var(--color-gold);
+      transition: background-color 0.3s, transform 0.4s cubic-bezier(0.01,0.6, 0.4,0.2),
+      opacity 0.7s ease;
+    }
   }
 
-  .burger:active .line1,
-  .burger:active .line2,
-  .burger:active .line3 {
-    background-color: var(--color-white);
-    transition: background-color 0.3s, transform 0.4s cubic-bezier(0.01,0.6, 0.4,0.2),
-    opacity 0.7s ease;
-  }
-  
   .open .line1 {
     width: 62px;
     transform: rotate(45deg) translate(6px, 16px);
