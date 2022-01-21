@@ -62,6 +62,7 @@ html {
     justify-content: space-between;
     font-family: Inter, Helvetica, sans-serif;
     font-weight: 400;
+    overflow-x: hidden;
   }
 
   form {
@@ -596,7 +597,7 @@ html {
   .line3 {
     height: 3px;
     background-color: var(--color-white);
-    transition: background-color 0.3s, transform 0.5s cubic-bezier(0.01,0.6,0.4,0.2),
+    transition: background-color 0.3s, transform 0.4s cubic-bezier(0.01,0.6,0.4,0.2),
     opacity 0.7s ease;
   }
 
@@ -604,7 +605,7 @@ html {
   .burger:hover .line2,
   .burger:hover .line3 {
     background-color: var(--color-gold);
-    transition: background-color 0.3s, transform 0.5s cubic-bezier(0.01,0.6, 0.4,0.2),
+    transition: background-color 0.3s, transform 0.4s cubic-bezier(0.01,0.6, 0.4,0.2),
     opacity 0.7s ease;
   }
 
@@ -627,11 +628,12 @@ html {
     color: var(--color-white);
     position: absolute;
     top: 0;
-    right: 0;
+    right: -620px;
     width: 620px;
     height: 1024px;
     padding-top: 128px;
     padding-left: 127px;
+    transition: 0.5s;
   }
 
   .nav ul {
@@ -646,6 +648,11 @@ html {
 
   .nav li {
     font-size: 35px;
+  }
+
+  .open {
+    right: 0;
+    transition: 0.5s;
   }
 
   .c {
