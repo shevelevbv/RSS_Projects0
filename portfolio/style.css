@@ -37,6 +37,7 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 *,
@@ -62,6 +63,7 @@ html {
     justify-content: space-between;
     font-family: Inter, Helvetica, sans-serif;
     font-weight: 400;
+    position: relative;
     overflow-x: hidden;
   }
 
@@ -609,6 +611,14 @@ html {
     opacity 0.7s ease;
   }
 
+  .burger:active .line1,
+  .burger:active .line2,
+  .burger:active .line3 {
+    background-color: var(--color-white);
+    transition: background-color 0.3s, transform 0.4s cubic-bezier(0.01,0.6, 0.4,0.2),
+    opacity 0.7s ease;
+  }
+  
   .open .line1 {
     width: 62px;
     transform: rotate(45deg) translate(6px, 16px);

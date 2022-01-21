@@ -2,8 +2,8 @@ function closeMenu() {
   if (event.target.classList.contains('nav-item')) {
     document.querySelector(".burger").classList.remove("open");
     document.querySelector(".nav").classList.remove("open");
+    document.querySelector(".page-mask").classList.remove("open");
   }
-  document.querySelector(".page-mask").classList.remove("open");
 }
 
 document.querySelector(".burger").addEventListener("click", () => {
