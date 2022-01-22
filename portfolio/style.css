@@ -540,6 +540,14 @@ p {
 
 @media (max-width: 1430px) {
 
+  .container {
+    padding: 0;
+  }
+
+  .hero-container {
+    width: 100vw;
+  }
+
   .skills {
     height: 800px;
   }
@@ -566,8 +574,61 @@ p {
     width: 920px;
     grid-template-columns: 1fr 1fr;
     height: auto;
+  } 
+
+  .card {
+    width: 420px;
+    height: 505px;
   }
+
+  .price h2 {
+    width: 124px;
+  }
+
+  .price-cards {
+    width: 420px;
+    height: 1665px;
+    margin: 50px auto 30px auto;
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 0;
+  }
+
+  .thumbnail {
+    width: calc(100% - 20px);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: calc((100vw - 20px) * 0.5625);
+  }
+
+  .footer-container {
+    padding: 0 20px 0 20px;
+  }
+}
+
+@media (max-width: 960px) {
   
+  .button-container {
+  width: 445px;
+  height: 115px;
+  margin: 50px auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 5px;
+  }
+
+  .img-container {
+    width: 450px;
+    height: 3485px;
+    margin: 60px auto 80px auto;
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 25px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -602,16 +663,6 @@ p {
   .hero-container .button {
     width: 219px;
     height: 54px;
-  }
-
-  .button-container {
-    width: 445px;
-    height: 115px;
-    margin: 50px auto 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 5px;
-    row-gap: 5px;
   }
 
   .burger {
@@ -704,11 +755,6 @@ p {
     width: 19px;
   }
 
-  .card {
-    width: 420px;
-    height: 505px;
-  }
-
   .contacts {
     background-image: url("./img/jpg/contacts1.jpg");
     width: 100%;
@@ -792,15 +838,6 @@ p {
     padding-top: 10px;
   }
 
-  .img-container {
-    width: 450px;
-    height: 3485px;
-    margin: 60px auto 80px auto;
-    display: grid;
-    grid-template-columns: 100%;
-    row-gap: 25px;
-  }
-
   .language {
     margin-left: auto;
     margin-right: 22px;
@@ -845,19 +882,6 @@ p {
     margin: 0 auto;
   }
 
-  .price h2 {
-    width: 124px;
-  }
-
-  .price-cards {
-    width: 420px;
-    height: 1665px;
-    margin: 50px auto 30px auto;
-    display: grid;
-    grid-template-columns: 100%;
-    row-gap: 0;
-  }
-
   .skill-item img {
     margin-bottom: 0px;
   }
@@ -867,6 +891,7 @@ p {
   }
 
   .thumbnail {
+    display: block;
     width: 100%;
     height: 418px;
     background-image: url("./img/jpg/video-player1.jpg");
