@@ -566,6 +566,15 @@ p {
     width: 100%;
   }
 
+  .h2-wrapper {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .portfolio h2 {
+    margin: 0 auto;
+  }
+
   .button-container {
     margin-left: auto;
   }
@@ -594,6 +603,10 @@ p {
     row-gap: 0;
   }
 
+  .video h2 {
+    margin: 0 auto;
+  }
+
   .thumbnail {
     width: calc(100% - 20px);
     padding: 0;
@@ -602,6 +615,15 @@ p {
     align-items: center;
     background-size: cover;
     height: calc((100vw - 20px) * 0.5625);
+  }
+
+  .contacts {
+    width: 100vw;
+    padding-left: calc(100vw - 600px);
+  }
+
+  .contacts h2 {
+    margin-left: 20px;
   }
 
   .footer-container {
@@ -822,7 +844,7 @@ p {
   }
 
   .hero-container {
-    padding-top: 79px;
+    padding-top: 78px;
     padding-left: 60px;
     height: 500px;
     background-position: -5px -120px;
@@ -833,7 +855,7 @@ p {
   .hero-container p {
     width: 390px;
     line-height: 24.2px;
-    margin-top: 9px;
+    margin-top: 10px;
     margin-bottom: 59px;
     padding-top: 10px;
   }
@@ -909,140 +931,144 @@ p {
   .year {
     width: 52px;
   }
+}
 
-  @media(max-width: 767px) {
+@media(max-width: 767px) {
 
-    .thumbnail {
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-size: cover;
-      height: calc((100vw - 20px) * 0.5625);
-    }
-
+  .skill-container {
+    margin-left: auto;
   }
 
-  @media(max-width: 645px) {
+  .thumbnail {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: calc((100vw - 20px) * 0.5625);
+  }
+}
 
-    .container-header {
-      background-position: -150px -30px;
-    }
+@media(max-width: 645px) {
 
-    .hero-container {
-      background-position: -150px -120px;
-    }
-
-    .contacts {
-      width: 100%;
-      padding: 0;
-      padding-top: 60px;
-    }
-
-    .contacts h2 {
-      width: 90%;
-      margin: 0 auto;
-    }
-
-    form {
-      width: 90%;
-      margin: 0 auto;
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    textarea,
-    .email,
-    .phone {
-      width: 100%;
-    }
-
-    .skills {
-      width: 100%;
-      height: auto;
-      padding: 0;
-    }
-
-    .skill-container {
-      width: 60%;
-      height: 100%;
-      margin: 45px auto 50px auto;
-      display: grid;
-      grid-template-columns: 100%;
-      justify-items: center;
-    }
-
-    .portfolio {
-      width: 100%;
-      margin-top: 20px;
-    }
-
+  .container-header {
+    background-position: -150px -30px;
   }
 
-  @media (max-width: 619px) {
-    .nav {
-      width: 100%;
-      padding-left: 20vw;
-    }
+  .hero-container {
+    background-position: -150px -120px;
   }
 
-  @media (max-width: 490px) {
-
-    .language {
-      margin-left: 15px;
-      width: 58px;
-    }
-
-    .slash {
-      margin-right: 0;
-    }
-
-    .container-header {
-      background-position: -270px -30px;
-    }
-
-    .hero-container {
-      background-position: -270px -120px;
-    }
-
-    .hero-container p {
-      width: 50%;
-    }
-
-    .button-container {
-      width: 220px;
-      height: auto;
-      grid-template-columns: 100%;
-    }
-
-    .img-container {
-      width: 90%;
-      height: auto;
-    }
-
-    .img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .img > img {
-      width: 100%;
-    }
-
-    .price-cards {
-      width: 100%;
-      justify-items: center;
-    }
-
-    .card {
-      width: 90%;
-    }
-
-    .benefits {
-      width: 100%;
-    }
+  .contacts {
+    width: 100%;
+    padding: 0;
+    padding-top: 60px;
   }
+
+  .contacts h2 {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  form {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  textarea,
+  .email,
+  .phone {
+    width: 100%;
+  }
+
+  .skills {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .skill-container {
+    width: 60%;
+    height: 100%;
+    margin: 45px auto 50px auto;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+  }
+
+  .portfolio {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+}
+
+@media (max-width: 619px) {
+  .nav {
+    width: 100%;
+    padding-left: 20vw;
+  }
+}
+
+@media (max-width: 490px) {
+
+  .language {
+    margin-left: 15px;
+    width: 58px;
+  }
+
+  .slash {
+    margin-right: 0;
+  }
+
+  .container-header {
+    background-position: -270px -30px;
+  }
+
+  .hero-container {
+    background-position: -270px -120px;
+  }
+
+  .hero-container p {
+    width: 50%;
+  }
+
+  .button-container {
+    width: 220px;
+    height: auto;
+    grid-template-columns: 100%;
+  }
+
+  .img-container {
+    width: 90%;
+    height: auto;
+  }
+
+  .img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .img > img {
+    width: 100%;
+  }
+
+  .price-cards {
+    width: 100%;
+    justify-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .benefits {
+    width: 100%;
+  }
+}
