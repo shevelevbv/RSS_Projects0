@@ -471,6 +471,11 @@ p {
   margin-left: 238px;
 }
 
+.button.other.active {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+}
+
 .price h2 {
   width: 142px;
 }

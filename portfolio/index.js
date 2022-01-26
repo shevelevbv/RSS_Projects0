@@ -6,10 +6,26 @@ function closeMenu(event) {
   }
 }
 
+function changeClassActive (event) {
+  if(event.target.classList.contains("button")) {
+    imageBtns.forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+  }
+}
+
 function changeImage(event) {
   if(event.target.classList.contains("button")) {
     images.forEach((img, index) => img.src = `./img/jpg/${event.target.dataset.season}/${index + 1}.jpg`);
   }
+}
+
+function preloadImages(seasons) {
+  seasons.forEach(season => {
+    for(let i = 1; i <= 6; i++) {
+      const img = new Image();
+      img.src = `./img/jpg/${season}/${i}.jpg`;
+    }
+  });
 }
 
 document.querySelector(".burger").addEventListener("click", () => {
@@ -20,7 +36,13 @@ document.querySelector(".burger").addEventListener("click", () => {
 
 document.querySelector(".nav").addEventListener("click", closeMenu);
 
+const seasons = ["winter", "spring", "summer", "autumn"];
+preloadImages(seasons);
+
 const images = document.querySelectorAll(".portfolio-image");
+const imageBtns = document.querySelectorAll(".other");
+
+document.querySelector(".button-container").addEventListener("click", changeClassActive);
 
 document.querySelector(".button-container").addEventListener("click", changeImage);
 
