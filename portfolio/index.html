@@ -10,235 +10,236 @@
   </head>
   <body>
     <header>
-      <div class="container container-header header">
+      <div class="container header">
         <div class="logo">
-          <a href=""><img src="./img/svg/portfolio-logo.svg" alt="Logo" /></a>
+          <a class="logo__link" href=""><img src="./img/svg/portfolio-logo.svg" alt="Logo" /></a>
         </div>
         <nav class="nav">
-          <ul>
-            <li><a href="#skills" class="nav-item">Skills</a></li>
-            <li><a href="#portfolio" class="nav-item">Portfolio</a></li>
-            <li><a href="#video" class="nav-item">Video</a></li>
-            <li><a href="#price" class="nav-item">Price</a></li>
-            <li><a href="#contacts" class="nav-item">Contacts</a></li>
+          <ul class="nav__items">
+            <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+            <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+            <li class="nav__item"><a href="#video" class="nav__link">Video</a></li>
+            <li class="nav__item"><a href="#price" class="nav__link">Price</a></li>
+            <li class="nav__item"><a href="#contacts" class="nav__link">Contacts</a></li>
           </ul>
         </nav>
         <div class="language">
-          <span class="current">en</span>
-          <span class="slash">/</span>
-          <a href="">ru</a>
+          <span class="language__current">en</span>
+          <span class="language__slash">/</span>
+          <a href="" class="language__link">ru</a>
         </div>
         <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+          <div class="burger__line1"></div>
+          <div class="burger__line2"></div>
+          <div class="burger__line3"></div>
         </div>
       </div>
     </header>
     <main>
       <div class="container">
-        <section class="hero hero-container">
-          <div class="info">
+        <section class="hero">
+          <div class="hero__name">
             <h1>Alexa Rise</h1>
-            <p>
+            <p class="hero__description">
               Save sincere emotions, romantic feelings and happy moments of life
               together with professional photographer Alexa Rise
             </p>
-            <button class="button">Hire me</button>
+            <button class="hero__button button">Hire me</button>
           </div>
         </section>
         <section class="skills" id="skills">
-          <div class="h2-wrapper">
+          <div class="skills__h2-wrapper h2-wrapper">
             <h2>Skills</h2>
           </div>
-          <ul class="skill-container">
-            <li class="skill-item">
-              <img src="./img/svg/skills-camera.svg" alt="Camera Icon" />
+          <ul class="skills__items">
+            <li class="skills__item">
+              <img class="skills__icon" src="./img/svg/skills-camera.svg" alt="Camera Icon" />
               <h4>Digital photography</h4>
-              <p>High-quality photos in the studio and on the nature</p>
+              <p class="skills__description">High-quality photos in the studio and on the nature</p>
             </li>
-            <li class="skill-item">
-              <img src="./img/svg/skills-video.svg" alt="Video Icon" />
+            <li class="skills__item">
+              <img class="skills__icon" src="./img/svg/skills-video.svg" alt="Video Icon" />
               <h4>Video shooting</h4>
-              <p>Capture your moments so that they always stay with you</p>
+              <p class="skills__description">Capture your moments so that they always stay with you</p>
             </li>
-            <li class="skill-item">
-              <img src="./img/svg/skills-image.svg" alt="Landscape Icon" />
+            <li class="skills__item">
+              <img class="skills__icon" src="./img/svg/skills-image.svg" alt="Landscape Icon" />
               <h4>Retouch</h4>
-              <p>I strive to make photography surpass reality</p>
+              <p class="skills__description">I strive to make photography surpass reality</p>
             </li>
-            <li class="skill-item">
-              <img src="./img/svg/skills-mic.svg" alt="Microphone Icon" />
+            <li class="skills__item">
+              <img class="skills__icon" src="./img/svg/skills-mic.svg" alt="Microphone Icon" />
               <h4>Audio</h4>
-              <p>
+              <p class="skills__description">
                 Professional sounds recording for video, advertising, portfolio
               </p>
             </li>
           </ul>
         </section>
         <section class="portfolio" id="portfolio">
-          <div class="h2-wrapper">
-            <h2>Portfolio</h2>
+          <div class="portfolio__h2-wrapper h2-wrapper">
+            <h2 class="portfolio__title">Portfolio</h2>
           </div>
-          <ul class="button-container">
+          <ul class="portfolio__buttons">
             <li>
-              <button class="button other" data-season="winter">Winter</button>
+              <button class="button portfolio__button" data-season="winter">Winter</button>
             </li>
             <li>
-              <button class="button other" data-season="spring">Spring</button>
+              <button class="button portfolio__button" data-season="spring">Spring</button>
             </li>
             <li>
-              <button class="button other" data-season="summer">Summer</button>
+              <button class="button portfolio__button" data-season="summer">Summer</button>
             </li>
-            <li><button class="button other active" data-season="autumn">Autumn</button></li>
+            <li><button class="button portfolio__button active" data-season="autumn">Autumn</button></li>
           </ul>
-          <ul class="img-container">
-            <li class="img">
+          <ul class="portfolio__images">
+            <li class="portfolio__img">
               <img
                 src="./img/jpg/autumn/1.jpg"
                 alt="Kissing Couple"
-                class="portfolio-image"
+                class="portfolio__image"
               />
             </li>
-            <li class="img">
+            <li class="portfolio__img">
               <img
                 src="./img/jpg/autumn/2.jpg"
                 alt="Sunrise"
-                class="portfolio-image"
+                class="portfolio__image"
               />
             </li>
-            <li class="img">
+            <li class="portfolio__img">
               <img
                 src="./img/jpg/autumn/3.jpg"
                 alt="Child"
-                class="portfolio-image"
+                class="portfolio__image"
               />
             </li>
-            <li class="img">
+            <li class="portfolio__img">
               <img
                 src="./img/jpg/autumn/4.jpg"
                 alt="Trees"
-                class="portfolio-image"
+                class="portfolio__image"
               />
             </li>
-            <li class="img">
+            <li class="portfolio__img">
               <img
                 src="./img/jpg/autumn/5.jpg"
                 alt="Smiling People"
-                class="portfolio-image"
+                class="portfolio__image"
               />
             </li>
-            <li class="img">
+            <li class="portfolio__img">
               <img
                 src="./img/jpg/autumn/6.jpg"
                 alt="Person with a Phone"
-                class="portfolio-image"
+                class="portfolio__image"
               />
             </li>
           </ul>
         </section>
         <section class="video" id="video">
           <div class="h2-wrapper">
-            <h2>Video</h2>
+            <h2 class="video__title">Video</h2>
           </div>
-          <div class="thumbnail">
-            <div class="play-button">
-              <button class="play">
-                <img src="./img/svg/play_hover.svg" alt="Play Button" />
+          <div class="video__thumbnail">
+            <div class="video__play-button-wrapper">
+              <button class="video__play-button">
+                <img class="video__play-logo" src="./img/svg/play_hover.svg" alt="Play Button" />
               </button>
             </div>
           </div>
         </section>
         <section class="price" id="price">
           <div class="h2-wrapper">
-            <h2>Price</h2>
+            <h2 class="price__title">Price</h2>
           </div>
-          <ul class="price-cards">
-            <li class="card">
+          <ul class="price__cards">
+            <li class="price__card">
               <h3>Standard</h3>
-              <h3 class="rate">500 $</h3>
-              <div class="benefits">
-                <span>One location</span>
-                <span>120 photos in color</span>
-                <span>12 photos in retouch</span>
-                <span>Readiness 2-3 weeks</span>
-                <span>Make up, visage</span>
+              <h3 class="price__rate">500 $</h3>
+              <div class="price__benefits">
+                <span class="price__benefit">One location</span>
+                <span class="price__benefit">120 photos in color</span>
+                <span class="price__benefit">12 photos in retouch</span>
+                <span class="price__benefit">Readiness 2-3 weeks</span>
+                <span class="price__benefit">Make up, visage</span>
               </div>
-              <button class="button">Order shooting</button>
+              <button class="price__button button">Order shooting</button>
             </li>
-            <li class="card">
+            <li class="price__card">
               <h3>Premium</h3>
-              <h3 class="rate">700 $</h3>
-              <div class="benefits">
-                <span>One or two locations</span>
-                <span>200 photos in color</span>
-                <span>20 photos in retouch</span>
-                <span>Readiness 1-2 weeks</span>
-                <span>Make up, visage</span>
+              <h3 class="price__rate">700 $</h3>
+              <div class="price__benefits">
+                <span class="price__benefit">One or two locations</span>
+                <span class="price__benefit">200 photos in color</span>
+                <span class="price__benefit">20 photos in retouch</span>
+                <span class="price__benefit">Readiness 1-2 weeks</span>
+                <span class="price__benefit">Make up, visage</span>
               </div>
-              <button class="button">Order shooting</button>
+              <button class="price__button button">Order shooting</button>
             </li>
-            <li class="card">
+            <li class="price__card">
               <h3>Gold</h3>
-              <h3 class="rate">1000 $</h3>
-              <div class="benefits">
-                <span>Three locations or more</span>
-                <span>300 photos in color</span>
-                <span>50 photos in retouch</span>
-                <span>Readiness 1 week</span>
-                <span>Make up, visage, hairstyle</span>
+              <h3 class="price__rate">1000 $</h3>
+              <div class="price__benefits">
+                <span class="price__benefit">Three locations or more</span>
+                <span class="price__benefit">300 photos in color</span>
+                <span class="price__benefit">50 photos in retouch</span>
+                <span class="price__benefit">Readiness 1 week</span>
+                <span class="price__benefit">Make up, visage, hairstyle</span>
               </div>
-              <button class="button">Order shooting</button>
+              <button class="price__button button">Order shooting</button>
             </li>
           </ul>
         </section>
         <section class="contacts" id="contacts">
-          <h2>Contact me</h2>
-          <form action="https://www.google.com" method="GET">
-            <input type="email" placeholder="E-mail" class="email" />
-            <input type="tel" placeholder="Phone" class="phone" />
+          <h2 class="contacts__title">Contact me</h2>
+          <form class="contacts__form" action="https://www.google.com" method="GET">
+            <input type="email" placeholder="E-mail" class="contacts__email" />
+            <input type="tel" placeholder="Phone" class="contacts__phone" />
             <textarea
+              class="contacts__textarea"
               name="message"
               id="message"
               cols="30"
               rows="5"
               placeholder="Message"
             ></textarea>
-            <button class="button">Send message</button>
+            <button class="contacts__button button">Send message</button>
           </form>
         </section>
       </div>
     </main>
     <footer>
-      <div class="container footer-container">
-        <div class="footer-left">
-          <p class="c">&copy;</p>
-          <p class="year">2022</p>
-          <a href="https://github.com/shevelevbv" target="_blank">github</a>
+      <div class="container footer">
+        <div class="footer__left">
+          <p class="footer_copyright">&copy;</p>
+          <p class="footer__year">2022</p>
+          <a class="footer__left-link" href="https://github.com/shevelevbv" target="_blank">github</a>
         </div>
-        <div class="footer-center">
-          <a href="https://rs.school/js/" target="_blank"
+        <div class="footer__center">
+          <a class="footer__center-link" href="https://rs.school/js/" target="_blank"
             >Rolling Scopes School</a
           >
         </div>
-        <ul class="footer-right">
-          <li>
-            <a href="https://www.instagram.com/" target="_blank"
+        <ul class="footer__right">
+          <li class="footer__logo">
+            <a class="footer__logo-link" href="https://www.instagram.com/" target="_blank"
               ><img src="./img/svg/instagram-logo.svg" alt="Instagram Logo"
             /></a>
           </li>
-          <li>
-            <a href="https://www.facebook.com/" target="_blank"
+          <li class="footer__logo">
+            <a class="footer__logo-link" href="https://www.facebook.com/" target="_blank"
               ><img src="./img/svg/facebook-logo.svg" alt="Facebook Logo"
             /></a>
           </li>
-          <li>
-            <a href="https://www.twitter.com/" target="_blank"
+          <li class="footer__logo">
+            <a class="footer__logo-link" href="https://www.twitter.com/" target="_blank"
               ><img src="./img/svg/twitter-logo.svg" alt="Twitter Logo"
             /></a>
           </li>
-          <li>
-            <a href="https://www.pinterest.com/" target="_blank"
+          <li class="footer__logo">
+            <a class="footer__logo-link" href="https://www.pinterest.com/" target="_blank"
               ><img src="./img/svg/pinterest-logo.svg" alt="Pinterest Logo"
             /></a>
           </li>
