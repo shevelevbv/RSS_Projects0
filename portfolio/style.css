@@ -190,24 +190,35 @@ ul {
   align-items: center;
 }
 
-.language__current {
-  color: var(--color-gold);
+.language__en {
   width: 25px;
 }
 
 .language__slash {
   width: 7px;
+  color: var(--color-white);
+  cursor: default;
 }
 
-.language__link {
+.language__ru {
   width: 19px;
-  color: var(--color-white);
-  text-decoration: none;
   transition: color 0.3s;
 }
 
-.language__link:hover {
+.lang {
+  color: var(--color-white);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.lang:hover {
   color: var(--color-gold);
+  transition: color 0.3s;
+}
+
+.lang.active {
+  color: var(--color-gold);
+  cursor: default;
   transition: color 0.3s;
 }
 
@@ -558,6 +569,10 @@ ul {
     padding: 0;
   }
 
+  .header {
+    padding: 0 20px;
+  }
+
   .hero {
     width: 100vw;
   }
@@ -732,7 +747,7 @@ ul {
     width: 80px;
   }
 
-  .language__current {
+  .language__en {
     width: 25px;
   }
 
@@ -816,7 +831,7 @@ ul {
     padding-top: 10px;
   }
 
-  .hero .button {
+  .hero__button {
     width: 219px;
     height: 54px;
   }
@@ -1016,7 +1031,6 @@ ul {
   .contacts__textarea {
     width: 100%;
   }
-
 }
 
 @media (max-width: 619px) {
