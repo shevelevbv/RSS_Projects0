@@ -1,24 +1,32 @@
 import i18Obj from './translate.js';
 
 function changeClassActive (event) {
-  if(event.target.classList.contains('portfolio__button')) {
+  if (event.target.classList.contains('portfolio__button')) {
     imageBtns.forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
   }
-  if(event.target.classList.contains('lang')) {
+  if (event.target.classList.contains('lang')) {
     langSwitches.forEach(lang => lang.classList.remove('active'));
     event.target.classList.add('active');
   }
 }
 
+function changeClassRu (event) {
+  if (event.target.classList.contains('language__ru')) {
+    titles.forEach(title => title.classList.add('ru'));
+  } else if (event.target.classList.contains('language__en')) {
+    titles.forEach(title => title.classList.remove('ru'));
+  }
+}
+
 function changeImage(event) {
-  if(event.target.classList.contains('portfolio__button')) {
+  if (event.target.classList.contains('portfolio__button')) {
     images.forEach((img, index) => img.src = `./img/jpg/${event.target.dataset.season}/${index + 1}.jpg`);
   }
 }
 
 function changeLanguage(event) {
-  if(event.target.classList.contains('lang')) {
+  if (event.target.classList.contains('lang')) {
     language = event.target.classList.contains('language__ru') ? 'ru' : 'en'; 
   }
 }
@@ -36,6 +44,10 @@ function getTranslate(language) {
   objWithDataAttr.forEach(obj => {
     if (i18Obj[language].hasOwnProperty(obj.dataset.i18n)) {
       obj.textContent = i18Obj[language][obj.dataset.i18n];
+      if (obj.placeholder) {
+        obj.placeholder = i18Obj[language][obj.dataset.i18n];
+        obj.textContent = '';
+      }
     }
   });
 }
@@ -50,6 +62,7 @@ function preloadImages(seasons) {
 }
 
 const langSwitches = document.querySelectorAll('.lang');
+const titles = document.querySelectorAll('.title');
 let language = 'en';
 
 document.querySelector('.language').addEventListener('click', changeClassActive);
@@ -57,6 +70,7 @@ document.querySelector('.language').addEventListener('click', changeLanguage);
 document.querySelector('.language').addEventListener('click', () => { 
   getTranslate(language);
 });
+document.querySelector('.language').addEventListener('click', changeClassRu);
 
 document.querySelector('.burger').addEventListener('click', () => {
   document.querySelector('.burger').classList.toggle('open');

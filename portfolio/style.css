@@ -278,6 +278,12 @@ ul {
   );
 }
 
+.skills__title.ru {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .skills__items {
   display: flex;
   justify-content: space-between;
@@ -312,6 +318,12 @@ ul {
 .portfolio__title {
   width: 221px;
   margin-left: 238px;
+}
+
+.portfolio__title.ru {
+  width: 270px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .portfolio__buttons {
@@ -388,6 +400,12 @@ ul {
 
 .price__title {
   width: 142px;
+}
+
+.price__title.ru {
+  width: 160px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .price__cards {
@@ -831,6 +849,10 @@ ul {
     padding-top: 10px;
   }
 
+  .hero__description.ru {
+    width: 460px;
+  }
+
   .hero__button {
     width: 219px;
     height: 54px;
@@ -1041,6 +1063,30 @@ ul {
   }
 }
 
+@media (max-width: 570px) {
+
+  .hero__description.ru {
+    width: 70%;
+  }
+
+  .h2-wrapper {
+    width: 90%;
+  }
+
+  .skills__title.ru {
+    width: 164px;
+  }
+
+  .portfolio__title.ru {
+    padding: 0;
+    width: 220px;
+  }
+
+  .price__title.ru {
+    width: 120px;
+  }
+}
+
 @media (max-width: 490px) {
 
   .header {
@@ -1061,7 +1107,8 @@ ul {
     background-position: -270px -120px;
   }
 
-  .hero__description {
+  .hero__description,
+  .hero__description.ru {
     width: 50%;
   }
 
@@ -1101,12 +1148,5 @@ ul {
 
   .price__benefits {
     width: 100%;
-  }
-}
-
-@media (max-width: 391px) {
-
-  .portfolio__title {
-    padding-right: 20px;
   }
 }

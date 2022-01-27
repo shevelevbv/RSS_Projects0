@@ -56,7 +56,7 @@
         <section class="hero">
           <div class="hero__name">
             <h1 data-i18n="hero-title">Alexa Rise</h1>
-            <p class="hero__description" data-i18n="hero-text">
+            <p class="hero__description title" data-i18n="hero-text">
               Save sincere emotions, romantic feelings and happy moments of life
               together with professional photographer Alexa Rise
             </p>
@@ -67,7 +67,7 @@
         </section>
         <section class="skills" id="skills">
           <div class="skills__h2-wrapper h2-wrapper">
-            <h2 class="skills__title" data-i18n="skills">Skills</h2>
+            <h2 class="skills__title title" data-i18n="skills">Skills</h2>
           </div>
           <ul class="skills__items">
             <li class="skills__item">
@@ -118,7 +118,7 @@
         </section>
         <section class="portfolio" id="portfolio">
           <div class="portfolio__h2-wrapper h2-wrapper">
-            <h2 class="portfolio__title" data-i18n="portfolio">Portfolio</h2>
+            <h2 class="portfolio__title title" data-i18n="portfolio">Portfolio</h2>
           </div>
           <ul class="portfolio__buttons">
             <li>
@@ -205,7 +205,7 @@
         </section>
         <section class="video" id="video">
           <div class="h2-wrapper">
-            <h2 class="video__title" data-i18n="video">Video</h2>
+            <h2 class="video__title title" data-i18n="video">Video</h2>
           </div>
           <div class="video__thumbnail">
             <div class="video__play-button-wrapper">
@@ -221,7 +221,7 @@
         </section>
         <section class="price" id="price">
           <div class="h2-wrapper">
-            <h2 class="price__title" data-i18n="price">Price</h2>
+            <h2 class="price__title title" data-i18n="price">Price</h2>
           </div>
           <ul class="price__cards">
             <li class="price__card">
@@ -329,14 +329,14 @@
           </ul>
         </section>
         <section class="contacts" id="contacts">
-          <h2 class="contacts__title" data-i18n="contacts" data-i18n="contact-me">Contact me</h2>
+          <h2 class="contacts__title title" data-i18n="contacts" data-i18n="contact-me">Contact me</h2>
           <form
             class="contacts__form"
             action="https://www.google.com"
             method="GET"
           >
-            <input type="email" placeholder="E-mail" class="contacts__email" />
-            <input type="tel" placeholder="Phone" class="contacts__phone" />
+            <input class="contacts__email" type="email" placeholder="E-mail" data-i18n="email" />
+            <input class="contacts__phone" type="tel" placeholder="Phone" data-i18n="phone"  />
             <textarea
               class="contacts__textarea"
               name="message"
@@ -344,6 +344,7 @@
               cols="30"
               rows="5"
               placeholder="Message"
+              data-i18n="message"
             ></textarea>
             <button class="contacts__button button" data-i18n="send-message">Send message</button>
           </form>
