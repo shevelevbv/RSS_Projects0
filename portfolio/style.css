@@ -69,6 +69,7 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--color-white);
 }
 
 h1 {
@@ -130,7 +131,6 @@ ul {
   padding: 0 20px;
   font-family: Inter, Helvetica, sans-serif;
   font-size: 20px;
-  color: var(--color-white);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -147,10 +147,12 @@ ul {
   transition: filter 0.3s;
 }
 
-.logo:hover {
-  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-    contrast(87%);
-  transition: filter 0.3s;
+@media not all and (hover:none) {
+  .logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+    transition: filter 0.3s;
+  }
 }
 
 .logo__link {
@@ -172,13 +174,14 @@ ul {
 }
 
 .nav__link {
-  color: var(--color-white);
   transition: color 0.3s;
 }
 
-.nav__link:hover {
-  color: var(--color-gold);
-  transition: color 0.3s;
+@media not all and (hover:none) {
+  .nav__link:hover {
+    color: var(--color-gold);
+    transition: color 0.3s;
+  }
 }
 
 .language {
@@ -211,9 +214,11 @@ ul {
   transition: color 0.3s;
 }
 
-.lang:hover {
-  color: var(--color-gold);
-  transition: color 0.3s;
+@media not all and (hover:none) {
+  .lang:hover {
+    color: var(--color-gold);
+    transition: color 0.3s;
+  }
 }
 
 .lang.active {
@@ -226,10 +231,10 @@ ul {
   background-image: url("./img/jpg/bg.jpg");
   background-position: center -90px;
   background-repeat: no-repeat;
+  height: 910px;
   margin: 0 auto;
   padding-top: 160px;
   padding-left: 60px;
-  height: 910px;
 }
 
 .hero__name {
@@ -256,9 +261,11 @@ ul {
   height: 55px;
 }
 
-.button:hover {
-  color: var(--color-white);
-  transition: color 0.3s;
+@media not all and (hover:none) {
+  .button:hover {
+    color: var(--color-white);
+    transition: color 0.3s;
+  }
 }
 
 .skills {
@@ -392,10 +399,12 @@ ul {
   transition: filter 0.3s;
 }
 
-.video__play-logo:hover {
-  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-    contrast(87%);
-  transition: filter 0.3s;
+@media not all and (hover:none) {
+  .video__play-logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+    transition: filter 0.3s;
+  }
 }
 
 .price__title {
@@ -524,7 +533,7 @@ ul {
   align-items: center;
 }
 
-.footer__left {
+.copyright {
   width: 168px;
   height: 50px;
   display: flex;
@@ -532,26 +541,28 @@ ul {
   align-items: center;
 }
 
-.footer__left-link,
-.footer__center-link {
-  color: var(--color-white);
+.school-page {
+  display: block;
+  padding-left: 19px;
+}
+
+.copyright__github,
+.school-page__link {
+
   text-decoration: none;
   font-size: 20px;
   transition: color 0.3s;
 }
 
-.footer__left-link:hover,
-.footer__center-link:hover {
-  color: var(--color-gold);
-  transition: color 0.3s;
+@media not all and (hover:none) {
+  .copyright__github:hover,
+  .school-page__link:hover {
+    color: var(--color-gold);
+    transition: color 0.3s;
+  }
 }
 
-.footer__center-link {
-  display: block;
-  padding-left: 19px;
-}
-
-.footer__right {
+.social-media {
   width: 188px;
   height: 50px;
   display: flex;
@@ -559,7 +570,7 @@ ul {
   align-items: center;
 }
 
-.footer__logo {
+.social-media__logo {
   width: 32px;
   height: 32px;
   display: flex;
@@ -567,19 +578,20 @@ ul {
   justify-content: center;
 }
 
-.footer__logo-link {
+.social-media__link {
   display: flex;
   justify-content: center;
   align-items: center;
   transition: filter 0.3s;
 }
 
-.footer__logo-link:hover {
-  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-    contrast(87%);
-  transition: filter 0.3s;
+@media not all and (hover:none) {
+  .social-media__link:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+    transition: filter 0.3s;
+  }
 }
-
 
 @media (max-width: 1430px) {
 
@@ -733,7 +745,6 @@ ul {
 
   .nav {
     background-color: var(--color-black);
-    color: var(--color-white);
     position: absolute;
     z-index: 2;
     top: 0;
@@ -746,7 +757,6 @@ ul {
   }
 
   .nav__items {
-    color: var(--color-white);
     width: 150px;
     height: 400px;
     display: flex;
@@ -959,25 +969,25 @@ ul {
     flex-direction: column;
   }
 
-  .footer__copyright {
-    width: 19px;
-  }
-
-  .footer__left {
+  .copyright {
     width: 173px;
   }
 
-  .footer__left-link {
+  .copyright__symbol {
+    width: 19px;
+  }
+
+  .copyright__year {
+    width: 52px;
+  }
+
+  .copyright__github {
     width: 62px;
   }
 
-  .footer__center {
+  .school-page {
     width: 248px;
     line-height: 24.2px;
-  }
-
-  .footer__year {
-    width: 52px;
   }
 }
 

@@ -65,12 +65,12 @@ const langSwitches = document.querySelectorAll('.lang');
 const titles = document.querySelectorAll('.title');
 let language = 'en';
 
-document.querySelector('.language').addEventListener('click', changeClassActive);
-document.querySelector('.language').addEventListener('click', changeLanguage);
-document.querySelector('.language').addEventListener('click', () => { 
+document.querySelector('.language').addEventListener('click', (event) => { 
+  changeClassActive(event);
+  changeLanguage(event);
   getTranslate(language);
+  changeClassRu(event);
 });
-document.querySelector('.language').addEventListener('click', changeClassRu);
 
 document.querySelector('.burger').addEventListener('click', () => {
   document.querySelector('.burger').classList.toggle('open');
