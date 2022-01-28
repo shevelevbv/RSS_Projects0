@@ -30,6 +30,7 @@
   --color-gold: #bdae82;
   --color-black: #000;
   --color-white: #fff;
+  --color-matte-black: #1C1C1C;
   --font1: 60px;
   --font2: 40px;
 }
@@ -55,7 +56,7 @@ html {
   line-height: 27px;
 }
 
-body {
+.body {
   margin: 0 auto;
   background-color: var(--color-black);
   display: flex;
@@ -65,31 +66,6 @@ body {
   font-weight: 400;
   position: relative;
   overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: var(--color-white);
-}
-
-h1 {
-  color: var(--color-white);
-  font-family: Merriweather, Helvetica, sans-serif;
-  font-size: var(--font1);
-  line-height: 120px;
-  margin: 0;
-}
-
-h2 {
-  background-color: var(--color-black);
-  color: var(--color-gold);
-  font-family: Merriweather, Helvetica, sans-serif;
-  font-size: var(--font2);
-  text-align: center;
-  margin: 0 auto;
-  width: 152px;
-  height: 80px;
-  line-height: 80px;
 }
 
 h3 {
@@ -109,15 +85,108 @@ h4 {
   margin-bottom: 22px;
 }
 
-p {
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.button {
+  background-color: var(--color-gold);
+  border: 0;
+  color: var(--color-black);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 20px;
+  transition: color 0.3s;
+  width: 220px;
+  height: 55px;
+}
+
+@media not all and (hover:none) {
+
+  .button:hover {
+    color: var(--color-white);
+    transition: color 0.3s;
+  }
+
+  .icon:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+    transition: filter 0.3s;
+    cursor: pointer;
+  }
+}
+
+.icon.light {
+  filter: invert(100%);
+}
+
+.icon.light:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+    transition: filter 0.3s;
+}
+
+.h2-wrapper {
+  width: 50%;
+  margin: 0 auto;
+  background-image: linear-gradient(
+    to top,
+    var(--color-black) 39px,
+    var(--color-gold) 39px,
+    var(--color-gold) 41px,
+    var(--color-black) 41px
+  );
+}
+
+.h2-wrapper.light {
+  background-image: linear-gradient(
+    to top,
+    var(--color-white) 39px,
+    var(--color-matte-black) 39px,
+    var(--color-matte-black) 41px,
+    var(--color-white) 41px
+  );
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.link.light {
+  color: var(--color-matte-black);
+}
+
+.text {
   font-family: Inter, Helvetica, sans-serif;
   font-size: 20px;
   color: var(--color-white);
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
+.text.light {
+  color: var(--color-matte-black);
+}
+
+.title {
+  background-color: var(--color-black);
+  color: var(--color-gold);
+  font-family: Merriweather, Helvetica, sans-serif;
+  font-size: var(--font2);
+  text-align: center;
+  margin: 0 auto;
+  width: 152px;
+  height: 80px;
+  line-height: 80px;
+}
+
+.title.light {
+  background-color: var(--color-white);
+  color: var(--color-matte-black);
+}
+
+.body.light {
+  background-color: var(--color-white);
 }
 
 .container {
@@ -127,8 +196,9 @@ ul {
 }
 
 .header {
+  width: 100%;
   height: 90px;
-  padding: 0 20px;
+  padding: 2px 21px 0 20px;
   font-family: Inter, Helvetica, sans-serif;
   font-size: 20px;
   display: flex;
@@ -139,20 +209,19 @@ ul {
   background-position: center 0;
 }
 
+.header.light {
+  background: url("./img/jpg/bg-light.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+
+}
+
 .logo {
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   transition: filter 0.3s;
-}
-
-@media not all and (hover:none) {
-  .logo:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-      contrast(87%);
-    transition: filter 0.3s;
-  }
 }
 
 .logo__link {
@@ -165,9 +234,10 @@ ul {
 }
 
 .nav__items {
-  width: 501px;
+  padding-left: 12px;
+  padding-right: 5px;
+  width: 525px;
   height: 50px;
-  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -185,7 +255,7 @@ ul {
 }
 
 .language {
-  width: 70px;
+  width: 80px;
   height: 50px;
   font-weight: 700;
   display: flex;
@@ -203,6 +273,10 @@ ul {
   cursor: default;
 }
 
+.language__slash.light {
+  color: var(--color-matte-black);
+}
+
 .language__ru {
   width: 19px;
   transition: color 0.3s;
@@ -214,10 +288,18 @@ ul {
   transition: color 0.3s;
 }
 
+.lang.light {
+  color: var(--color-matte-black);
+}
+
 @media not all and (hover:none) {
   .lang:hover {
     color: var(--color-gold);
     transition: color 0.3s;
+  }
+
+  .lang.light:hover {
+    color: var(--color-white);
   }
 }
 
@@ -227,19 +309,50 @@ ul {
   transition: color 0.3s;
 }
 
+.lang.light.active {
+  color: var(--color-white);
+}
+
+.theme {
+  width: 45px;
+  height: 45px;
+  margin-left: 43px;
+}
+
+.theme__icon {
+  transition: 0.3s;
+}
+
 .hero {
+  width: 100%;
   background-image: url("./img/jpg/bg.jpg");
   background-position: center -90px;
   background-repeat: no-repeat;
   height: 910px;
   margin: 0 auto;
   padding-top: 160px;
-  padding-left: 60px;
+  padding-left: 80px;
 }
 
-.hero__name {
+.hero.light {
+  background-image: url("./img/jpg/bg-light.jpg");
+}
+
+.hero__info {
   width: 490px;
   height: 330px;
+}
+
+.hero__title {
+  color: var(--color-white);
+  font-family: Merriweather, Helvetica, sans-serif;
+  font-size: var(--font1);
+  line-height: 120px;
+  margin: 0;
+}
+
+.hero__title.light {
+  color: var(--color-matte-black);
 }
 
 .hero__description {
@@ -249,40 +362,21 @@ ul {
   padding-top: 10px;
 }
 
-.button {
-  background-color: var(--color-gold);
-  border: 0;
-  color: var(--color-black);
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 20px;
-  transition: color 0.3s;
-  width: 220px;
-  height: 55px;
+.hero__button.light {
+  background-color: var(--color-white);
+  color: var(--color-matte-black);
+  transition: all 0.3s;
 }
 
-@media not all and (hover:none) {
-  .button:hover {
-    color: var(--color-white);
-    transition: color 0.3s;
-  }
+.hero__button.light:hover {
+  background-color: var(--color-matte-black);
+  color: var(--color-gold);
+  transition: all 0.3s;
 }
 
 .skills {
   padding-top: 10px;
   height: 482px;
-}
-
-.h2-wrapper {
-  width: 50%;
-  margin: 0 auto;
-  background-image: linear-gradient(
-    to top,
-    var(--color-black) 39px,
-    var(--color-gold) 39px,
-    var(--color-gold) 41px,
-    var(--color-black) 41px
-  );
 }
 
 .skills__title.ru {
@@ -399,14 +493,6 @@ ul {
   transition: filter 0.3s;
 }
 
-@media not all and (hover:none) {
-  .video__play-logo:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-      contrast(87%);
-    transition: filter 0.3s;
-  }
-}
-
 .price__title {
   width: 142px;
 }
@@ -470,11 +556,19 @@ ul {
   padding-left: 950px;
 }
 
+.contacts.light {
+  background-image: url("./img/jpg/contacts-light.jpg");
+}
+
 .contacts__title {
   background-color: transparent;
   width: 450px;
   height: 80px;
   text-align: left;
+}
+
+.contacts__title.light {
+  background-color: transparent;
 }
 
 .contacts__form {
@@ -524,6 +618,18 @@ ul {
 
 .contacts__button {
   margin-top: 10px;
+}
+
+.contacts__button.light {
+  background-color: var(--color-white);
+  color: var(--color-matte-black);
+  transition: all 0.3s;
+}
+
+.contacts__button.light:hover {
+  background-color: var(--color-black);
+  color: var(--color-gold);
+  transition: all 0.3s;
 }
 
 .footer {
@@ -583,14 +689,6 @@ ul {
   justify-content: center;
   align-items: center;
   transition: filter 0.3s;
-}
-
-@media not all and (hover:none) {
-  .social-media__link:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
-      contrast(87%);
-    transition: filter 0.3s;
-  }
 }
 
 @media (max-width: 1430px) {
@@ -713,13 +811,6 @@ ul {
 }
 
 @media (max-width: 768px) {
-  
-  h1 {
-    font-size: 32px;
-    font-style: normal;
-    line-height: 64px;
-    font-weight: normal;
-  }
 
   h2 {
     font-size: 32px;
@@ -849,6 +940,13 @@ ul {
     background-position: -5px -120px;
     background-size: auto 620px;
     margin-bottom: 70px;
+  }
+
+  .hero__title {
+    font-size: 32px;
+    font-style: normal;
+    line-height: 64px;
+    font-weight: normal;
   }
 
   .hero__description {
