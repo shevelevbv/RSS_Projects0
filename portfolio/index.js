@@ -14,8 +14,10 @@ function changeClassActive (event) {
 function changeClassRu (event) {
   if (event.target.classList.contains('language__ru')) {
     titles.forEach(title => title.classList.add('ru'));
+    document.querySelector('.hero__description').classList.add('ru');
   } else if (event.target.classList.contains('language__en')) {
     titles.forEach(title => title.classList.remove('ru'));
+    document.querySelector('.hero__description').classList.remove('ru');
   }
 }
 
