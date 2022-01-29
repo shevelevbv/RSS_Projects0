@@ -34,10 +34,9 @@ function changeLanguage(event) {
 }
 
 function changeTheme() {
-  lightThemeElements.forEach(element => element.classList.toggle('light'));
+  lightThemeElements.forEach(element => element.classList.toggle(`${theme}`));
   themeIcon.src = (themeIcon.classList.contains('light')) ? './img/svg/crescent.svg' :
                                                           './img/svg/sun.svg';
-  console.log(themeIcon.src);
 }
 
 function closeMenu(event) {
@@ -70,9 +69,26 @@ function preloadImages(seasons) {
   });
 }
 
+function setLocalStorage() {
+  localStorage.setItem('lang', language);
+}
+
+function getLocalStorage() {
+  if (localStorage.getItem('lang')) {
+    language = localStorage.getItem('lang');
+    if (language === 'ru') {
+      document.querySelector('.language__ru').click();
+    }
+  }
+}
+
+window.addEventListener('load', getLocalStorage);
+
+let language = 'en';
+let theme = 'light';
+
 const langSwitches = document.querySelectorAll('.lang');
 const titles = document.querySelectorAll('.title');
-let language = 'en';
 
 document.querySelector('.language').addEventListener('click', (event) => { 
   changeClassActive(event);
@@ -103,6 +119,8 @@ const imageBtns = document.querySelectorAll('.portfolio__button');
 document.querySelector('.portfolio__buttons').addEventListener('click', changeClassActive);
 
 document.querySelector('.portfolio__buttons').addEventListener('click', changeImage);
+
+window.addEventListener('beforeunload', setLocalStorage);
 
 console.log('Самооценка: 75 баллов\n' + 
             'Верстка соответствует макету при ширине 768px: 48 баллов\n' +

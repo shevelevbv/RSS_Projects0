@@ -48,6 +48,14 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+.change {
+  transition: color 0.5s ease, background-color 0.5s, background-image 0.5s ease;
+}
+
+.change.light {
+  transition: color 0.5s ease, background-color 0.5s, background-image 0.5s ease;
+}
+
 .body {
   margin: 0 auto;
   background-color: var(--color-black);
@@ -58,12 +66,10 @@ html {
   font-weight: 400;
   position: relative;
   overflow-x: hidden;
-  transition: background-color 0.5s ease;
 }
 
 .body.light {
   background-color: var(--color-white);
-  transition: background-color 0.5s ease;
 }
 
 h3 {
@@ -204,14 +210,12 @@ ul {
   background: url("./img/jpg/bg.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
-  transition: background-image 0.5s ease;
 }
 
 .header.light {
   background: url("./img/jpg/bg-light.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
-  transition: background-image 0.5s ease;
 }
 
 .logo {
@@ -269,7 +273,6 @@ ul {
   width: 7px;
   color: var(--color-white);
   cursor: default;
-  transition: color 0.3s ease;
 }
 
 .language__slash.light {
@@ -278,13 +281,11 @@ ul {
 
 .language__ru {
   width: 19px;
-  transition: color 0.3s;
 }
 
 .lang {
   color: var(--color-white);
   cursor: pointer;
-  transition: color 0.3s;
 }
 
 .lang.light {
@@ -305,12 +306,10 @@ ul {
 .lang.active {
   color: var(--color-gold);
   cursor: default;
-  transition: color 0.3s;
 }
 
 .lang.light.active {
   color: var(--color-white);
-  transition: color 0.3s;
 }
 
 .theme {
@@ -348,12 +347,10 @@ ul {
   margin: 0 auto;
   padding-top: 160px;
   padding-left: 80px;
-  transition: background-image 0.5s ease;
 }
 
 .hero.light {
   background-image: url("./img/jpg/bg-light.jpg");
-  transition: background-image 0.5s ease;
 }
 
 .hero__info {
@@ -367,7 +364,6 @@ ul {
   font-size: var(--font1);
   line-height: 120px;
   margin: 0;
-  transition: color 0.3s ease;
 }
 
 .hero__title.light {
@@ -379,7 +375,6 @@ ul {
   margin-top: 0;
   margin-bottom: 25px;
   padding-top: 10px;
-  transition: color 0.3s ease;
 }
 
 .hero__button.light {
