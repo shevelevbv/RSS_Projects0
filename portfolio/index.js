@@ -34,9 +34,10 @@ function changeLanguage(event) {
 }
 
 function changeTheme() {
-  lightThemeElements.forEach(element => element.classList.toggle(`${theme}`));
+  lightThemeElements.forEach(element => element.classList.toggle('light'));
   themeIcon.src = (themeIcon.classList.contains('light')) ? './img/svg/crescent.svg' :
                                                           './img/svg/sun.svg';
+  theme = (themeIcon.classList.contains('light')) ? 'light' : 'dark';
 }
 
 function closeMenu(event) {
@@ -71,6 +72,8 @@ function preloadImages(seasons) {
 
 function setLocalStorage() {
   localStorage.setItem('lang', language);
+  console.log(theme);
+  localStorage.setItem('theme', theme);
 }
 
 function getLocalStorage() {
@@ -80,12 +83,18 @@ function getLocalStorage() {
       document.querySelector('.language__ru').click();
     }
   }
+  if (localStorage.getItem('theme')) {
+    theme = localStorage.getItem('theme');
+    if (theme === 'light') {
+      document.querySelector('.theme').click();
+    }
+  }
 }
 
-window.addEventListener('load', getLocalStorage);
-
 let language = 'en';
-let theme = 'light';
+let theme = 'dark';
+
+window.addEventListener('load', getLocalStorage);
 
 const langSwitches = document.querySelectorAll('.lang');
 const titles = document.querySelectorAll('.title');

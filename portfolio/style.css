@@ -251,7 +251,7 @@ ul {
 
 @media not all and (hover:none) {
   .nav__link:hover {
-    color: var(--color-gold);
+    color: var(--color-white);
     transition: color 0.3s;
   }
 }
