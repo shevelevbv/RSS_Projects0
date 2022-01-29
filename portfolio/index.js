@@ -31,6 +31,13 @@ function changeLanguage(event) {
   }
 }
 
+function changeTheme() {
+  lightThemeElements.forEach(element => element.classList.toggle('light'));
+  themeIcon.src = (themeIcon.classList.contains('light')) ? './img/svg/crescent.svg' :
+                                                          './img/svg/sun.svg';
+  console.log(themeIcon.src);
+}
+
 function closeMenu(event) {
   if (event.target.classList.contains('nav__link')) {
     document.querySelector('.burger').classList.remove('open');
@@ -71,6 +78,11 @@ document.querySelector('.language').addEventListener('click', (event) => {
   getTranslate(language);
   changeClassRu(event);
 });
+
+const lightThemeElements = document.querySelectorAll('.change');
+const themeIcon = document.querySelector('.theme__icon');
+
+document.querySelector('.theme').addEventListener('click', changeTheme);
 
 document.querySelector('.burger').addEventListener('click', () => {
   document.querySelector('.burger').classList.toggle('open');

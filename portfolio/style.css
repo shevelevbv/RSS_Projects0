@@ -49,12 +49,7 @@ html {
 }
 
 
-::placeholder {
-  color: var(--color-gold);
-  font-family: Inter, Helvetica, sans-serif;
-  font-size: 20px;
-  line-height: 27px;
-}
+
 
 .body {
   margin: 0 auto;
@@ -74,15 +69,6 @@ h3 {
   font-size: 28px;
   line-height: 56px;
   margin-bottom: 21px;
-}
-
-h4 {
-  color: var(--color-white);
-  font-family: Inter, Helvetica, sans-serif;
-  font-size: 20px;
-  line-height: 38px;
-  font-weight: 700;
-  margin-bottom: 22px;
 }
 
 ul {
@@ -109,6 +95,16 @@ ul {
     transition: color 0.3s;
   }
 
+  .button.light {
+    transition: all 0.3s;
+  }
+
+  .button.light:hover {
+    background-color: var(--color-matte-black);
+    color: var(--color-gold);
+    transition: all 0.3s;
+  }
+
   .icon:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
       contrast(87%);
@@ -119,6 +115,7 @@ ul {
 
 .icon.light {
   filter: invert(100%);
+  transition: filter 0.3s;
 }
 
 .icon.light:hover {
@@ -319,7 +316,8 @@ ul {
   margin-left: 43px;
 }
 
-.theme__icon {
+.theme__icon.light {
+  filter: none;
   transition: 0.3s;
 }
 
@@ -368,12 +366,6 @@ ul {
   transition: all 0.3s;
 }
 
-.hero__button.light:hover {
-  background-color: var(--color-matte-black);
-  color: var(--color-gold);
-  transition: all 0.3s;
-}
-
 .skills {
   padding-top: 10px;
   height: 482px;
@@ -402,6 +394,19 @@ ul {
 
 .skills__icon {
   margin-bottom: 20px;
+}
+
+.skill__title {
+  color: var(--color-white);
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 38px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.skill__title.light {
+  color: var(--color-matte-black);
 }
 
 .skills__description {
@@ -441,11 +446,28 @@ ul {
   transition: background-color 0.5s, color 0.3s;
 }
 
+.portfolio__button.light {
+  background-color: var(--color-gold);
+  color: var(--color-matte-black);
+  transition: all 0.3s;
+}
+
+.portfolio__button.light:hover {
+  background-color: var(--color-black);
+  color: var(--color-gold);
+  transition: all 0.3s;
+}
+
 .portfolio__button.active {
   background-color: var(--color-gold);
   color: var(--color-black);
   transition: background-color 0.5s, color 0.5s;
   cursor: default;
+}
+
+.portfolio__button.light.active {
+  background-color: var(--color-black);
+  color: var(--color-gold);
 }
 
 .portfolio__images {
@@ -527,6 +549,11 @@ ul {
   margin-bottom: 20px;
 }
 
+.price__option.light,
+.price__rate.light {
+  color: var(--color-matte-black);
+}
+
 .price__benefits {
   width: 364px;
   height: 180px;
@@ -592,6 +619,28 @@ ul {
   transition: border-color 0.3s;
 }
 
+.contacts__email::placeholder,
+.contacts__phone::placeholder,
+.contacts__textarea::placeholder {
+  color: var(--color-gold);
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.contacts__email.light::placeholder,
+.contacts__phone.light::placeholder,
+.contacts__textarea.light::placeholder {
+  color: var(--color-matte-black);
+}
+
+.contacts__email.light,
+.contacts__phone.light,
+.contacts__textarea.light {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--color-matte-black);
+}
+
 .contacts__email:focus,
 .contacts__phone:focus,
 .contacts__textarea:focus {
@@ -602,6 +651,12 @@ ul {
   outline: none;
   border-color: var(--color-white);
   transition: border-color 0.3s;
+}
+
+.contacts__email.light:focus,
+.contacts__phone.light:focus,
+.contacts__textarea.light:focus {
+  color: var(--color-matte-black);
 }
 
 .contacts__email:focus::placeholder,
