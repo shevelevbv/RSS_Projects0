@@ -58,6 +58,12 @@ html {
   font-weight: 400;
   position: relative;
   overflow-x: hidden;
+  transition: background-color 0.5s ease;
+}
+
+.body.light {
+  background-color: var(--color-white);
+  transition: background-color 0.5s ease;
 }
 
 h3 {
@@ -83,6 +89,7 @@ ul {
   transition: color 0.3s;
   width: 220px;
   height: 55px;
+  transition: all 0.3s;
 }
 
 @media not all and (hover:none) {
@@ -179,10 +186,6 @@ ul {
   color: var(--color-matte-black);
 }
 
-.body.light {
-  background-color: var(--color-white);
-}
-
 .container {
   width: 100%;
   margin: 0 auto;
@@ -201,13 +204,14 @@ ul {
   background: url("./img/jpg/bg.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
+  transition: background-image 0.5s ease;
 }
 
 .header.light {
   background: url("./img/jpg/bg-light.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
-
+  transition: background-image 0.5s ease;
 }
 
 .logo {
@@ -265,6 +269,7 @@ ul {
   width: 7px;
   color: var(--color-white);
   cursor: default;
+  transition: color 0.3s ease;
 }
 
 .language__slash.light {
@@ -305,6 +310,7 @@ ul {
 
 .lang.light.active {
   color: var(--color-white);
+  transition: color 0.3s;
 }
 
 .theme {
@@ -320,6 +326,17 @@ ul {
 .theme__icon.light {
   filter: none;
   transition: 0.3s;
+  -webkit-animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+    to { opacity: 0; }
 }
 
 .hero {
@@ -331,10 +348,12 @@ ul {
   margin: 0 auto;
   padding-top: 160px;
   padding-left: 80px;
+  transition: background-image 0.5s ease;
 }
 
 .hero.light {
   background-image: url("./img/jpg/bg-light.jpg");
+  transition: background-image 0.5s ease;
 }
 
 .hero__info {
@@ -348,6 +367,7 @@ ul {
   font-size: var(--font1);
   line-height: 120px;
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 .hero__title.light {
@@ -359,6 +379,7 @@ ul {
   margin-top: 0;
   margin-bottom: 25px;
   padding-top: 10px;
+  transition: color 0.3s ease;
 }
 
 .hero__button.light {
