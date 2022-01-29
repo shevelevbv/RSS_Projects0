@@ -95,24 +95,27 @@ ul {
   transition: color 0.3s;
   width: 220px;
   height: 55px;
-  transition: all 0.3s;
+  transform: translatey(0em);
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.7s ease;
 }
 
 @media not all and (hover:none) {
 
   .button:hover {
     color: var(--color-white);
-    transition: color 0.3s;
+    box-shadow: 0 0.5em 0.5em -8px var(--color-gold);
+	  transform: translatey(-5px);
+    transition: color 0.3s ease, transform 0.7s ease;
   }
 
   .button.light {
-    transition: all 0.3s;
+    transition: transform 0.7s ease, background-color 0.7s, color 0.7s;
   }
 
   .button.light:hover {
     background-color: var(--color-matte-black);
     color: var(--color-gold);
-    transition: all 0.3s;
+    transition: background-color 0.7s, color 0.7s, transform 0.7s ease;
   }
 
   .icon:hover {
@@ -123,6 +126,10 @@ ul {
   }
 }
 
+.icon {
+  transition: filter 0.3s;
+}
+
 .icon.light {
   filter: invert(100%);
   transition: filter 0.3s;
@@ -131,7 +138,7 @@ ul {
 .icon.light:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
       contrast(87%);
-    transition: filter 0.3s;
+  transition: filter 0.3s;
 }
 
 .h2-wrapper {
@@ -251,6 +258,11 @@ ul {
 
 @media not all and (hover:none) {
   .nav__link:hover {
+    color: var(--color-gold);
+    transition: color 0.3s;
+  }
+
+  .nav__link.light:hover {
     color: var(--color-white);
     transition: color 0.3s;
   }
@@ -380,7 +392,7 @@ ul {
 .hero__button.light {
   background-color: var(--color-white);
   color: var(--color-matte-black);
-  transition: all 0.3s;
+  transition: transform 0.7s ease, background-color 0.3s ease;
 }
 
 .skills {
@@ -460,19 +472,19 @@ ul {
   background-color: var(--color-black);
   border: 2px solid var(--color-gold);
   color: var(--color-gold);
-  transition: background-color 0.5s, color 0.3s;
+  transition: background-color 0.7s, color 0.7s, transform 0.7s;
 }
 
 .portfolio__button.light {
   background-color: var(--color-gold);
   color: var(--color-matte-black);
-  transition: all 0.3s;
+  transition: background-color 0.7s, color 0.7s, transform 0.7s;
 }
 
 .portfolio__button.light:hover {
   background-color: var(--color-black);
   color: var(--color-gold);
-  transition: all 0.3s;
+  transition: background-color 0.7s, color 0.7s, transform 0.7s;
 }
 
 .portfolio__button.active {
@@ -480,6 +492,12 @@ ul {
   color: var(--color-black);
   transition: background-color 0.5s, color 0.5s;
   cursor: default;
+}
+
+.portfolio__button.active:hover {
+  transform: none;
+  box-shadow: none;
+  transition: transform 0.7s ease;
 }
 
 .portfolio__button.light.active {
@@ -589,6 +607,7 @@ ul {
 
 .price__button {
   margin: 0 auto;
+  transition: background-color 0.7s ease, color 0.7s ease, transform 0.7s ease;
 }
 
 .contacts {
@@ -695,13 +714,13 @@ ul {
 .contacts__button.light {
   background-color: var(--color-white);
   color: var(--color-matte-black);
-  transition: all 0.3s;
+  transition: background-color 0.7s ease, color 0.7s ease, transform 0.7s ease;
 }
 
 .contacts__button.light:hover {
   background-color: var(--color-black);
   color: var(--color-gold);
-  transition: all 0.3s;
+  transition: background-color 0.7s ease, color 0.7s ease, transform 0.7s ease;
 }
 
 .footer {
@@ -922,6 +941,7 @@ ul {
 
   .nav.light {
     background-color: var(--color-white);
+    transition: 0.5s;
   }
 
   .nav__items {
@@ -1005,17 +1025,16 @@ ul {
   }
 
   .open .burger__line1 {
-      width: 62px;
-      transform: rotate(45deg) translate(6px, 16px);
+      transform: rotate(45deg) translate(10px, 11px) scale(1.2);
     }
 
   .open .burger__line2 {
     opacity: 0;
+    transform: scale(0.5);
   }
 
   .open .burger__line3 {
-    width: 62px;
-    transform: rotate(-45deg) translate(5px, -13px);
+    transform: rotate(-45deg) translate(8px, -9px) scale(1.2);
   }
 
   .open.page-mask {
