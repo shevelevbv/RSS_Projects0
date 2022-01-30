@@ -1361,6 +1361,10 @@ ul {
     width: 100%;
     padding-left: 20vw;
   }
+
+  .nav.light {
+    padding-left: 15vw;
+  }
 }
 
 @media (max-width: 570px) {
