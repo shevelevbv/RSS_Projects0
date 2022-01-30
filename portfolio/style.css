@@ -141,26 +141,13 @@ ul {
   transition: filter 0.3s;
 }
 
-.h2-wrapper {
+.h2-wrapper,
+.h2-wrapper.light {
   width: 50%;
   margin: 0 auto;
-  background-image: linear-gradient(
-    to top,
-    var(--color-black) 39px,
-    var(--color-gold) 39px,
-    var(--color-gold) 41px,
-    var(--color-black) 41px
-  );
-}
-
-.h2-wrapper.light {
-  background-image: linear-gradient(
-    to top,
-    var(--color-white) 39px,
-    var(--color-matte-black) 39px,
-    var(--color-matte-black) 41px,
-    var(--color-white) 41px
-  );
+  background-color: transparent;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
 }
 
 .link {
@@ -192,11 +179,31 @@ ul {
   width: 152px;
   height: 80px;
   line-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title::before,
+.title::after {
+  content: '';
+  position: absolute;
+  width: 48.5%;
+  height: 2px;
+  background: var(--color-gold);
+  z-index: -1;
+  transition: background-color 0.3s ease;
 }
 
 .title.light {
   background-color: var(--color-white);
   color: var(--color-matte-black);
+}
+
+.title.light::before,
+.title.light::after {
+  background: var(--color-matte-black);
+  transition: background-color 0.3s ease;
 }
 
 .container {
@@ -331,12 +338,11 @@ ul {
 }
 
 .theme__icon {
-  transition: all 0.3s;
+  position: fixed;
 }
 
 .theme__icon.light {
   filter: none;
-  transition: 0.3s;
   -webkit-animation: fadein 1s;
 }
 
@@ -627,11 +633,14 @@ ul {
   background-color: transparent;
   width: 450px;
   height: 80px;
-  text-align: left;
+  justify-content:flex-start;
 }
 
 .contacts__title.light {
   background-color: transparent;
+  width: 450px;
+  height: 80px;
+  justify-content: flex-start;
 }
 
 .contacts__form {
@@ -942,11 +951,13 @@ ul {
   .nav.light {
     background-color: var(--color-white);
     transition: 0.5s;
+    padding-left: 110px;
+    padding-top: 105px;
   }
 
   .nav__items {
     width: 150px;
-    height: 400px;
+    height: 475px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -963,6 +974,7 @@ ul {
   .nav__link.light {
     color: var(--color-matte-black);
     transition: color 0.3s;
+    font-size: 40px;;
   }
 
   .nav__link.light:hover {
@@ -989,6 +1001,10 @@ ul {
     margin-left: 15px;
   }
 
+  .theme__icon {
+    position: static;
+  }
+
   .burger {
     width: 50px;
     height: 48px;
@@ -1012,6 +1028,8 @@ ul {
   .burger__line2.light,
   .burger__line3.light {
     background-color: var(--color-black);
+    transition: background-color 0.3s, transform 0.4s cubic-bezier(0.01,0.6,0.4,0.2),
+    opacity 0.7s ease;
   }
 
   @media not all and (hover:none) {
@@ -1098,13 +1116,6 @@ ul {
     height: 80px;
     margin: 0 auto;
     padding-top: 20px;
-    background-image: linear-gradient(
-      to top,
-      var(--color-black) 39px,
-      var(--color-gold) 39px,
-      var(--color-gold) 41px,
-      var(--color-black) 41px
-    );
   }
 
   .skills__items {
@@ -1166,7 +1177,12 @@ ul {
   }
 
   .contacts.light {
-    background-image: url("./img/jpg/contacts-tablet-light.jpg");;
+    background-image: url("./img/jpg/contacts-tablet-light.jpg");
+    width: 100%;
+    height: 600px;
+    padding-top: 44px;
+    padding-left: 139px;
+    margin: 0 auto;
   }
 
   .contacts__title {
@@ -1176,6 +1192,12 @@ ul {
     margin-top: 16px;
     height: 64px;
     line-height: 64px;
+  }
+
+  .contacts__title.light {
+    width: 43%;
+    justify-content: center;
+    height: 64px;
   }
 
   .contacts__form {
@@ -1264,13 +1286,15 @@ ul {
     margin-top: 20px;
   }
 
-  .contacts {
+  .contacts,
+  .contacts.light {
     width: 100%;
     padding: 0;
     padding-top: 60px;
   }
 
-  .contacts__title {
+  .contacts__title,
+  .contacts__title.light {
     width: 90%;
     margin: 0 auto;
   }
@@ -1306,12 +1330,26 @@ ul {
     width: 70%;
   }
 
-  .h2-wrapper {
-    width: 90%;
+  .h2-wrapper,
+  .h2-wrapper.light {
+    width: 100%;
+  }
+
+  .title {
+    width: 150px;
+  }
+
+  .title::before,
+  .title::after {
+    width: 80%;
   }
 
   .skills__title.ru {
     width: 164px;
+  }
+
+  .portfolio__title {
+    width: 210px;
   }
 
   .portfolio__title.ru {
@@ -1321,6 +1359,11 @@ ul {
 
   .price__title.ru {
     width: 120px;
+  }
+
+  .contacts__title,
+  .contacts__title.light {
+    width: 90%;
   }
 }
 
