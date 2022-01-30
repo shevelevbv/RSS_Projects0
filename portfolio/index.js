@@ -1,5 +1,14 @@
 import i18Obj from './translate.js';
 
+function addAnimate(event) {
+  if (event.target.classList.contains('theme__icon')) {
+    document.querySelectorAll('.theme__icon').forEach(btn => {
+      btn.classList.remove('animate');
+      btn.classList.add('animate');
+    });
+  }
+}
+
 function changeClassActive (event) {
   if (event.target.classList.contains('portfolio__button')) {
     imageBtns.forEach(btn => btn.classList.remove('active'));
@@ -35,8 +44,6 @@ function changeLanguage(event) {
 
 function changeTheme() {
   lightThemeElements.forEach(element => element.classList.toggle('light'));
-  themeIcon.src = (themeIcon.classList.contains('light')) ? './img/svg/crescent.svg' :
-                                                          './img/svg/sun.svg';
   theme = (themeIcon.classList.contains('light')) ? 'light' : 'dark';
 }
 
@@ -109,7 +116,10 @@ document.querySelector('.language').addEventListener('click', (event) => {
 const lightThemeElements = document.querySelectorAll('.change');
 const themeIcon = document.querySelector('.theme__icon');
 
-document.querySelector('.theme').addEventListener('click', changeTheme);
+document.querySelector('.theme').addEventListener('click', (event) => {
+  changeTheme(event),
+  addAnimate(event); 
+});
 
 document.querySelector('.burger').addEventListener('click', () => {
   document.querySelector('.burger').classList.toggle('open');

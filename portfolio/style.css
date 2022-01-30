@@ -331,6 +331,15 @@ ul {
   color: var(--color-white);
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
 .theme {
   width: 45px;
   height: 45px;
@@ -339,21 +348,50 @@ ul {
 
 .theme__icon {
   position: fixed;
+  transition: filter 0.3s;
 }
 
-.theme__icon.light {
-  filter: none;
-  -webkit-animation: fadein 1s;
+.theme__icon:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+  transition: filter 0.3s;
+  cursor: pointer;
 }
 
-@keyframes fadein {
-  from { opacity: 0; }
-    to { opacity: 1; }
+.sun {
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-@keyframes fadeout {
-  from { opacity: 1; }
-    to { opacity: 0; }
+.sun:hover,
+.crescent.light:hover {
+  transition: filter 0.3s;
+}
+
+.sun.animate {
+  animation: rotate 1s;
+}
+
+.sun.light {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.crescent.light {
+  opacity: 1;
+  display: inline;
+  transition: opacity 0.3s ease;
+}
+
+.crescent.light.animate {
+  animation: rotate 1s;
+}
+
+.crescent {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.3s ease;
 }
 
 .hero {
@@ -661,7 +699,7 @@ ul {
   height: 50px;
   margin-bottom: 20px;
   padding-left: 18px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s background-color 0.3s ease;
 }
 
 .contacts__email::placeholder,
@@ -671,6 +709,7 @@ ul {
   font-family: Inter, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 27px;
+  transition: color 0.3s ease;
 }
 
 .contacts__email.light::placeholder,
