@@ -3,10 +3,12 @@ import i18Obj from './translate.js';
 function addAnimate(event) {
   if (event.target.classList.contains('theme__icon')) {
     document.querySelectorAll('.theme__icon').forEach(btn => {
-    btn.classList.remove('animate');
     btn.classList.add('animate');
+    document.querySelector('.theme').addEventListener('animationend', () => {
+      document.querySelectorAll('.theme__icon').forEach(icon => icon.classList.remove('animate'));
     });
-  }
+  });
+}
   if (event.target.classList.contains('portfolio__button')) {
     document.querySelector('.portfolio__images').classList.add('animate');
     document.querySelector('.portfolio__images').addEventListener('animationend', () => {
