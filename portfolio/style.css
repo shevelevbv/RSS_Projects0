@@ -1431,8 +1431,9 @@ ul {
   }
 
   .contacts__title,
+  .contacts__title.ru,
   .contacts__title.light {
-    width: 90%;
+    width: 100%;
   }
 }
 
