@@ -3,8 +3,14 @@ import i18Obj from './translate.js';
 function addAnimate(event) {
   if (event.target.classList.contains('theme__icon')) {
     document.querySelectorAll('.theme__icon').forEach(btn => {
-      btn.classList.remove('animate');
-      btn.classList.add('animate');
+    btn.classList.remove('animate');
+    btn.classList.add('animate');
+    });
+  }
+  if (event.target.classList.contains('portfolio__button')) {
+    document.querySelector('.portfolio__images').classList.add('animate');
+    document.querySelector('.portfolio__images').addEventListener('animationend', () => {
+    document.querySelector('.portfolio__images').classList.remove('animate');
     });
   }
 }
@@ -135,9 +141,11 @@ preloadImages(seasons);
 const images = document.querySelectorAll('.portfolio__image');
 const imageBtns = document.querySelectorAll('.portfolio__button');
 
-document.querySelector('.portfolio__buttons').addEventListener('click', changeClassActive);
-
-document.querySelector('.portfolio__buttons').addEventListener('click', changeImage);
+document.querySelector('.portfolio__buttons').addEventListener('click', (event) => {
+  changeClassActive(event);
+  changeImage(event);
+  addAnimate(event);
+});
 
 window.addEventListener('beforeunload', setLocalStorage);
 
