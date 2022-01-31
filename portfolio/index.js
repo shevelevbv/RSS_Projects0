@@ -86,20 +86,19 @@ function preloadImages(seasons) {
 }
 
 function setLocalStorage() {
-  localStorage.setItem('lang', language);
-  console.log(theme);
-  localStorage.setItem('theme', theme);
+  localStorage.setItem('shevelevbvLang', language);
+  localStorage.setItem('shevelevbvTheme', theme);
 }
 
 function getLocalStorage() {
-  if (localStorage.getItem('lang')) {
-    language = localStorage.getItem('lang');
+  if (localStorage.getItem('shevelevbvLang')) {
+    language = localStorage.getItem('shevelevbvLang');
     if (language === 'ru') {
       document.querySelector('.language__ru').click();
     }
   }
-  if (localStorage.getItem('theme')) {
-    theme = localStorage.getItem('theme');
+  if (localStorage.getItem('shevelevbvTheme')) {
+    theme = localStorage.getItem('shevelevbvTheme');
     if (theme === 'light') {
       document.querySelector('.theme').click();
     }
