@@ -207,13 +207,13 @@ ul {
 }
 
 .container {
-  width: 100%;
+  width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .header {
-  width: 100%;
+  width: 1440px;
   height: 90px;
   padding: 2px 21px 0 20px;
   font-family: Inter, Helvetica, sans-serif;
@@ -395,7 +395,7 @@ ul {
 }
 
 .hero {
-  width: 100%;
+  width: 1440px;
   background-image: url("./img/jpg/bg.jpg");
   background-position: center -90px;
   background-repeat: no-repeat;
@@ -696,6 +696,11 @@ ul {
   justify-content: flex-start;
 }
 
+.contacts__title::before,
+.contacts__title::after {
+  content: none;
+}
+
 .contacts__form {
   margin-top: 40px;
   margin-left: 20px;
@@ -848,10 +853,12 @@ ul {
 @media (max-width: 1430px) {
 
   .container {
+    width: 100%;
     padding: 0;
   }
 
   .header {
+    width: 100%;
     padding: 0 20px;
   }
 
