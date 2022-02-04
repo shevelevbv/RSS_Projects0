@@ -150,9 +150,46 @@ document.querySelector('.portfolio__buttons').addEventListener('click', (event) 
 
 window.addEventListener('beforeunload', setLocalStorage);
 
-console.log('Самооценка: 75 баллов\n' + 
-            'Реализована смена картинок из соответствующих папок: 25 баллов\n' +
-            'Добавлена функция перевода страницы: 25 баллов\n' +
-            'Добавлена функция смена темы: 25 баллов\n' + 
-            'Реализовано запоминание пользовательских темы и языка: 5 баллов\n' +
-            'Добавлена функция подъема кнопки при наведении: 5 баллов\n');
+// Videoplayer
+
+function changeClassPaused (event) {
+  if (event.target.classList.contains('video__controls-play-icon') ||
+      event.target.classList.contains('video__play-logo')) {
+    thumbnail.classList.toggle('paused');
+  }
+}
+
+function playPauseVideo() {
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}
+
+const thumbnail = document.querySelector('.video__thumbnail');
+const video = thumbnail.querySelector('.video__screen');
+const controls = thumbnail.querySelector('.video__controls');
+const playIcon = thumbnail.querySelector('.video__play-button');
+const playButton = thumbnail.querySelector('.video__controls-play');
+
+thumbnail.addEventListener('mouseover', () => {
+  controls.classList.add('hovered');
+});
+
+thumbnail.addEventListener('mouseleave', () => {
+  setTimeout(() => controls.classList.remove('hovered'), 1000);
+});
+
+playButton.addEventListener('click', (event) => {
+  changeClassPaused(event);
+  playPauseVideo();
+});
+
+playIcon.addEventListener('click', (event) => {
+  if (controls.classList.contains('unused')) {
+    controls.classList.remove('unused');
+  }
+  changeClassPaused(event);
+  playPauseVideo();
+});

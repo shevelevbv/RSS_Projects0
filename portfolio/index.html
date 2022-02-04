@@ -255,7 +255,7 @@
           <div class="h2-wrapper change">
             <h2 class="video__title title change" data-i18n="video">Video</h2>
           </div>
-          <div class="video__thumbnail">
+          <div class="video__thumbnail paused">
             <video class="video__screen" src="./video/video.mp4"></video>
             <div class="video__play-button-wrapper">
               <button class="video__play-button">
@@ -266,20 +266,20 @@
                 />
               </button>
             </div>
-            <div class="video__controls">
-              <div class="video__controls-play">
+            <div class="video__controls unused">
+              <button class="video__controls-play">
                 <img
                   class="video__controls-play-icon icon-play"
                   src="./img/svg/play.svg"
                   alt="Play Icon"
                 />
                 <img src="./img/svg/pause.svg" alt="" class="video__controls-play-icon icon-pause">
-              </div>
+              </button>
               <input type="range" class="video__controls-progress" />
-              <div class="video__controls-speaker">
+              <button class="video__controls-speaker">
                 <img src="./img/svg/volume.svg" alt="Speaker" class="video__controls-speaker-icon icon-speaker-on">
                 <img src="./img/svg/mute.svg" alt="Mute" class="video__controls-speaker-icon icon-speaker-off">
-              </div>
+              </button>
               <input type="range" class="video__controls-volume" />
             </div>
           </div>
