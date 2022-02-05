@@ -164,17 +164,24 @@ function changeClassMute(event) {
     if (currentVolume != 0) {
       volumeButton.classList.toggle('mute');
       changeVolume();
+    } 
+  }
+  if (event.target.classList.contains('video__controls-volume')) {
+    if (video.volume === 0) {
+      volumeButton.classList.add('mute');
+    } else {
+      volumeButton.classList.remove('mute');
     }
+  }
 }
 
 function changeVolume() {
   if (volumeButton.classList.contains('mute')) {
       video.volume = 0;
-    } else {
+  } else {
       video.volume = currentVolume;
-    }
-    volume.value = video.volume;
   }
+  volume.value = video.volume;
 }
 
 function playPauseVideo() {
@@ -193,14 +200,6 @@ const playButton = thumbnail.querySelector('.video__controls-play');
 const volumeButton = thumbnail.querySelector('.video__controls-speaker');
 const volume = thumbnail.querySelector('.video__controls-volume');
 let currentVolume = 0.5;
-
-thumbnail.addEventListener('mouseover', () => {
-  controls.classList.add('hovered');
-});
-
-thumbnail.addEventListener('mouseout', () => {
-  controls.classList.remove('hovered');
-});
 
 playButton.addEventListener('click', (event) => {
   changeClassPaused(event);
@@ -222,9 +221,11 @@ volumeButton.addEventListener('click', (event) => {
 volume.addEventListener('mousemove', (event) => {
   video.volume = event.target.value;
   currentVolume = video.volume;
-  if (video.volume === 0) {
-    volumeButton.classList.add('mute');
-  } else {
-    volumeButton.classList.remove('mute');
-  }
+  changeClassMute(event);
+});
+
+volume.addEventListener('click', (event) => {
+  video.volume = event.target.value;
+  currentVolume = video.volume;
+  changeClassMute(event);
 });

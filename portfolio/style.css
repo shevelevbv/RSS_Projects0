@@ -635,7 +635,8 @@ ul {
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  bottom: -60px;
+  bottom: 0;
+  transform: translateY(100%) translateY(-5px);
   z-index: 2;
   padding: 0 30px;
   transition: 0.5s;
@@ -645,10 +646,16 @@ ul {
   display: none;
 }
 
+.video__thumbnail:hover .video__controls {
+  transform: translateY(0);
+}
+
+/*
 .video__controls.hovered {
   bottom: 0;
   transition: 0.5s;
 }
+*/
 
 .video__controls-play,
 .video__controls-play-icon,
