@@ -266,21 +266,55 @@
                 />
               </button>
             </div>
-            <div class="video__controls">
-              <button class="video__controls-play">
-                <img
-                  class="video__controls-play-icon icon-play"
-                  src="./img/svg/play.svg"
-                  alt="Play Icon"
+            <div class="video__controls unused">
+              <div class="video__controls-progress-bar">
+                <input
+                  type="range"
+                  class="video__controls-progress"
+                  min="0"
+                  max="1"
+                  step="0.001"
+                  value="0"
                 />
-                <img src="./img/svg/pause.svg" alt="" class="video__controls-play-icon icon-pause">
-              </button>
-              <input type="range" class="video__controls-progress" min="0" max="1" step="0.001" value="0" />
-              <button class="video__controls-speaker">
-                <img src="./img/svg/volume.svg" alt="Speaker" class="video__controls-speaker-icon icon-speaker-on">
-                <img src="./img/svg/mute.svg" alt="Mute" class="video__controls-speaker-icon icon-speaker-off">
-              </button>
-              <input type="range" class="video__controls-volume" min="0" max="1" step="0.01" value="1" />
+              </div>
+              <div class="video__controls-board">
+                <div class="video__controls-play-container">
+                  <button class="video__controls-play">
+                    <img
+                      class="video__controls-play-icon icon-play"
+                      src="./img/svg/play.svg"
+                      alt="Play Icon"
+                    />
+                    <img
+                      src="./img/svg/pause.svg"
+                      alt=""
+                      class="video__controls-play-icon icon-pause"
+                    />
+                  </button>
+                </div>
+                <div class="video__controls-volume-container">
+                  <button class="video__controls-speaker">
+                  <img
+                    src="./img/svg/volume.svg"
+                    alt="Speaker"
+                    class="video__controls-speaker-icon icon-speaker-on"
+                  />
+                  <img
+                    src="./img/svg/mute.svg"
+                    alt="Mute"
+                    class="video__controls-speaker-icon icon-speaker-off"
+                  />
+                </button>
+                <input
+                  type="range"
+                  class="video__controls-volume"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value="1"
+                />
+                </div>
+              </div>
             </div>
           </div>
         </section>
