@@ -636,7 +636,7 @@ ul {
   align-items: center;
   position: absolute;
   bottom: 0;
-  transform: translateY(100%) translateY(-5px);
+  transform: translateY(0%) translateY(-5px);
   z-index: 2;
   padding: 0 30px;
   transition: 0.5s;
@@ -649,13 +649,6 @@ ul {
 .video__thumbnail:hover .video__controls {
   transform: translateY(0);
 }
-
-/*
-.video__controls.hovered {
-  bottom: 0;
-  transition: 0.5s;
-}
-*/
 
 .video__controls-play,
 .video__controls-play-icon,
@@ -700,7 +693,18 @@ ul {
 
 .video__controls-progress {
   width: 70%;
+  background: linear-gradient(to right, #BDAE82 0%, 
+             #BDAE82 0%, #C8C8C8 0%, #C8C8C8 100%);
 }
+
+.video__controls-progress,
+.video__controls-volume {
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin: 0;
+  transition: background 450ms ease-in;
+}
+
 
 .icon-speaker-on {
   display: inline;
@@ -720,6 +724,8 @@ ul {
 
 .video__controls-volume {
   width: 15%;
+  background: linear-gradient(to right, #BDAE82 0%, 
+             #BDAE82 100%, #C8C8C8 100%, #C8C8C8 100%);
 }
 
 .price__title {

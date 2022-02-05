@@ -183,6 +183,7 @@ function changeVolume() {
       video.volume = currentVolume;
   }
   volume.value = video.volume;
+  volume.style.background = `linear-gradient(to right, #BDAE82 0%, #BDAE82 ${volume.value * 100}%, #C8C8C8 ${volume.value * 100}%, #C8C8C8 100%)`;
 }
 
 function playPauseVideo() {
@@ -194,7 +195,8 @@ function playPauseVideo() {
 }
 
 function scrub(event) {
-  video.currentTime = (e.offsetX / progressBar.offsetWidth) * video.duration;
+  video.currentTime = (event.offsetX / progressBar.offsetWidth) * video.duration;
+  progressBar.style.background = `linear-gradient(to right, #BDAE82 0%, #BDAE82 ${event.offsetX / progressBar.offsetWidth * 100}%, #C8C8C8 ${event.offsetX / progressBar.offsetWidth * 100}%, #C8C8C8 100%)`;
 }
 
 const thumbnail = document.querySelector('.video__thumbnail');
@@ -223,10 +225,12 @@ playIcon.addEventListener('click', (event) => {
 
 video.addEventListener('timeupdate', () => {
   progressBar.value = video.currentTime / video.duration;
+  const value = progressBar.value * 100;
+  progressBar.style.background = `linear-gradient(to right, #BDAE82 0%, #BDAE82 ${value}%, #C8C8C8 ${value}%, #C8C8C8 100%)`;
 });
 
-progressBar.addEventListener('click', (event) => {
-  video.currentTime = event.target.value * video.duration;
+progressBar.addEventListener('change', (event) => {
+    video.currentTime = event.target.value * video.duration;
 });
 
 progressBar.addEventListener('mousedown', () => {
@@ -250,11 +254,13 @@ volumeButton.addEventListener('click', (event) => {
 volume.addEventListener('mousemove', (event) => {
   video.volume = event.target.value;
   currentVolume = video.volume;
+  volume.style.background = `linear-gradient(to right, #BDAE82 0%, #BDAE82 ${currentVolume * 100}%, #C8C8C8 ${currentVolume * 100}%, #C8C8C8 100%)`;
   changeClassMute(event);
 });
 
 volume.addEventListener('change', (event) => {
   video.volume = event.target.value;
   currentVolume = video.volume;
+  volume.style.background = `linear-gradient(to right, #BDAE82 0%, #BDAE82 ${currentVolume * 100}%, #C8C8C8 ${currentVolume * 100}%, #C8C8C8 100%)`;
   changeClassMute(event);
 });
