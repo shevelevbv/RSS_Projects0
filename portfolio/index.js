@@ -152,10 +152,28 @@ window.addEventListener('beforeunload', setLocalStorage);
 
 // Videoplayer
 
-function changeClassPaused (event) {
+function changeClassPaused(event) {
   if (event.target.classList.contains('video__controls-play-icon') ||
       event.target.classList.contains('video__play-logo')) {
     thumbnail.classList.toggle('paused');
+  }
+}
+
+function changeClassMute(event) {
+  if (event.target.classList.contains('video__controls-speaker-icon')) {
+    if (currentVolume != 0) {
+      volumeButton.classList.toggle('mute');
+      changeVolume();
+    }
+}
+
+function changeVolume() {
+  if (volumeButton.classList.contains('mute')) {
+      video.volume = 0;
+    } else {
+      video.volume = currentVolume;
+    }
+    volume.value = video.volume;
   }
 }
 
@@ -172,13 +190,16 @@ const video = thumbnail.querySelector('.video__screen');
 const controls = thumbnail.querySelector('.video__controls');
 const playIcon = thumbnail.querySelector('.video__play-button');
 const playButton = thumbnail.querySelector('.video__controls-play');
+const volumeButton = thumbnail.querySelector('.video__controls-speaker');
+const volume = thumbnail.querySelector('.video__controls-volume');
+let currentVolume = 0.5;
 
 thumbnail.addEventListener('mouseover', () => {
   controls.classList.add('hovered');
 });
 
-thumbnail.addEventListener('mouseleave', () => {
-  setTimeout(() => controls.classList.remove('hovered'), 1000);
+thumbnail.addEventListener('mouseout', () => {
+  controls.classList.remove('hovered');
 });
 
 playButton.addEventListener('click', (event) => {
@@ -192,4 +213,18 @@ playIcon.addEventListener('click', (event) => {
   }
   changeClassPaused(event);
   playPauseVideo();
+});
+
+volumeButton.addEventListener('click', (event) => {
+  changeClassMute(event);
+});
+
+volume.addEventListener('mousemove', (event) => {
+  video.volume = event.target.value;
+  currentVolume = video.volume;
+  if (video.volume === 0) {
+    volumeButton.classList.add('mute');
+  } else {
+    volumeButton.classList.remove('mute');
+  }
 });
