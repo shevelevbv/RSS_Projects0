@@ -88,6 +88,7 @@ function preloadImages(seasons) {
 function setLocalStorage() {
   localStorage.setItem('shevelevbvLang', language);
   localStorage.setItem('shevelevbvTheme', theme);
+  localStorage.setItem('shevelevbvVolume', currentVolume);
 }
 
 function getLocalStorage() {
@@ -192,14 +193,20 @@ function playPauseVideo() {
   }
 }
 
+function scrub(event) {
+  video.currentTime = (e.offsetX / progressBar.offsetWidth) * video.duration;
+}
+
 const thumbnail = document.querySelector('.video__thumbnail');
 const video = thumbnail.querySelector('.video__screen');
 const controls = thumbnail.querySelector('.video__controls');
 const playIcon = thumbnail.querySelector('.video__play-button');
 const playButton = thumbnail.querySelector('.video__controls-play');
+const progressBar = thumbnail.querySelector('.video__controls-progress');
 const volumeButton = thumbnail.querySelector('.video__controls-speaker');
 const volume = thumbnail.querySelector('.video__controls-volume');
-let currentVolume = 0.5;
+let currentVolume = 1;
+let mousedown = false;
 
 playButton.addEventListener('click', (event) => {
   changeClassPaused(event);
@@ -214,6 +221,28 @@ playIcon.addEventListener('click', (event) => {
   playPauseVideo();
 });
 
+video.addEventListener('timeupdate', () => {
+  progressBar.value = video.currentTime / video.duration;
+});
+
+progressBar.addEventListener('click', (event) => {
+  video.currentTime = event.target.value * video.duration;
+});
+
+progressBar.addEventListener('mousedown', () => {
+  mousedown = true;
+  video.pause();
+});
+
+progressBar.addEventListener('mouseup', () => {
+  mousedown = false;
+  video.play();
+});
+
+progressBar.addEventListener('mousemove', (event) => {
+  mousedown && scrub(event);
+});
+
 volumeButton.addEventListener('click', (event) => {
   changeClassMute(event);
 });
@@ -224,7 +253,7 @@ volume.addEventListener('mousemove', (event) => {
   changeClassMute(event);
 });
 
-volume.addEventListener('click', (event) => {
+volume.addEventListener('change', (event) => {
   video.volume = event.target.value;
   currentVolume = video.volume;
   changeClassMute(event);
