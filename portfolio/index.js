@@ -154,9 +154,11 @@ window.addEventListener('beforeunload', setLocalStorage);
 // Videoplayer
 
 function changeClassPaused(event) {
-  if (event.target.classList.contains('video__controls-play-icon') ||
-      event.target.classList.contains('video__play-logo')) {
-    thumbnail.classList.toggle('paused');
+  
+  if (event.target.classList.contains('video__screen') ||
+      event.target.classList.contains('video__play-logo') ||
+      event.target.classList.contains('video__controls-play-icon')) {
+        thumbnail.classList.toggle('paused');
   }
 }
 
@@ -223,10 +225,25 @@ playIcon.addEventListener('click', (event) => {
   playPauseVideo();
 });
 
+video.addEventListener('click', (event) => {
+  if (!controls.classList.contains('unused')) {
+    changeClassPaused(event);
+    playPauseVideo();
+  }
+})
+
 video.addEventListener('timeupdate', () => {
   progressBar.value = video.currentTime / video.duration;
   const value = progressBar.value * 100;
   progressBar.style.background = `linear-gradient(to right, #BDAE82 0%, #BDAE82 ${value}%, #C8C8C8 ${value}%, #C8C8C8 100%)`;
+});
+
+video.addEventListener('ended', () => {
+  thumbnail.classList.add('paused');
+});
+
+video.addEventListener('play', () => {
+  thumbnail.classList.remove('paused');
 });
 
 progressBar.addEventListener('change', (event) => {

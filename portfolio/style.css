@@ -624,6 +624,7 @@ ul {
   height: auto;
   position: relative;
   z-index: 1;
+  display: block;
 }
 
 .video__controls {
@@ -635,7 +636,7 @@ ul {
   bottom: 0;
   transform: translateY(100%) translateY(-5px);
   z-index: 2;
-  padding-top: 20px;
+  padding-top: 25px;
   transition: 0.5s;
 }
 
@@ -656,6 +657,7 @@ ul {
 .video__controls-board {
   display: flex;
   justify-content: space-between;
+  padding-left: 40px;
 }
 
 .video__controls-volume-container {
@@ -756,6 +758,7 @@ ul {
 
 .video__controls-volume {
   width: 50%;
+  height: 5px;
   background: linear-gradient(to right, #BDAE82 0%, 
              #BDAE82 100%, #C8C8C8 100%, #C8C8C8 100%);
 }
