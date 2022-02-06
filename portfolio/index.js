@@ -209,6 +209,8 @@ const playButton = thumbnail.querySelector('.video__controls-play');
 const progressBar = thumbnail.querySelector('.video__controls-progress');
 const volumeButton = thumbnail.querySelector('.video__controls-speaker');
 const volume = thumbnail.querySelector('.video__controls-volume');
+const currentTimeElement = thumbnail.querySelector('.video__controls-time-current');
+const durationTimeElement = thumbnail.querySelector('.video__controls-time-duration');
 let currentVolume = 1;
 let mousedown = false;
 
@@ -281,3 +283,15 @@ volume.addEventListener('change', (event) => {
   volume.style.background = `linear-gradient(to right, #BDAE82 0%, #BDAE82 ${currentVolume * 100}%, #C8C8C8 ${currentVolume * 100}%, #C8C8C8 100%)`;
   changeClassMute(event);
 });
+
+const currentTime = () => {
+  let currentMinutes = Math.floor(video.currentTime / 60);
+  let currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
+  let durationMinutes = Math.floor(video.duration / 60);
+  let durationSeconds = Math.floor(video.duration - durationMinutes * 60);
+
+  currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? '0' + currentSeconds : currentSeconds}`;
+  durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds < 10 ? '0' + durationSeconds : durationSeconds}`;
+}
+
+video.addEventListener('timeupdate', currentTime);

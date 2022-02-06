@@ -660,6 +660,14 @@ ul {
   padding-left: 40px;
 }
 
+.video__controls-play-container {
+  width: 40%;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  column-gap: 20px;
+}
+
 .video__controls-volume-container {
   width: 30%;
   display: flex;
@@ -707,6 +715,21 @@ ul {
 
 .paused .icon-pause {
   display: none;
+}
+
+.video__controls-time {
+  width: 80px;
+  color: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+}
+
+.video__controls-time-current {
+  width: 35px;
+}
+
+.video__controls-time-duration {
+  width: 35px;
 }
 
 .video__controls-progress {
