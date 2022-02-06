@@ -211,7 +211,7 @@ const volumeButton = thumbnail.querySelector('.video__controls-speaker');
 const volume = thumbnail.querySelector('.video__controls-volume');
 const currentTimeElement = thumbnail.querySelector('.video__controls-time-current');
 const durationTimeElement = thumbnail.querySelector('.video__controls-time-duration');
-let currentVolume = 1;
+let currentVolume = 0.5;
 let mousedown = false;
 
 playButton.addEventListener('click', (event) => {

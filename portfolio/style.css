@@ -783,7 +783,7 @@ ul {
   width: 50%;
   height: 5px;
   background: linear-gradient(to right, #BDAE82 0%, 
-             #BDAE82 100%, #C8C8C8 100%, #C8C8C8 100%);
+             #BDAE82 50%, #C8C8C8 50%, #C8C8C8 100%);
 }
 
 .video__controls-volume::-webkit-slider-thumb {
@@ -1394,19 +1394,23 @@ ul {
   }
 
   .video__thumbnail {
-    display: block;
     width: 100%;
-    height: 418px;
-    background-image: url("./img/jpg/video-player1.jpg");
-    background-repeat: no-repeat;
+    height: auto;
     margin: 50px auto 80px auto;
-    padding-top: 176px;
-    padding-left: 344px;
   }
 
   .video__play-button-wrapper {
     width: 75px;
     height: 75px;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 32.5px);
+    top: calc(50% - 32.5px);
+    z-index: 2;
+  }
+
+  .video__controls {
+    padding-right: 20px;
   }
 
   .video__play-logo {
