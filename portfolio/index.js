@@ -156,7 +156,7 @@ window.addEventListener('beforeunload', setLocalStorage);
 function changeClassPaused(event) {
   
   if (event.target.classList.contains('video__screen') ||
-      event.target.classList.contains('video__play-logo') ||
+      event.target.classList.contains('video__play-button') ||
       event.target.classList.contains('video__controls-play-icon')) {
         thumbnail.classList.toggle('paused');
   }
@@ -211,6 +211,7 @@ const volumeButton = thumbnail.querySelector('.video__controls-speaker');
 const volume = thumbnail.querySelector('.video__controls-volume');
 const currentTimeElement = thumbnail.querySelector('.video__controls-time-current');
 const durationTimeElement = thumbnail.querySelector('.video__controls-time-duration');
+const fullScreen = thumbnail.querySelector('.video__controls-fullscreen');
 let currentVolume = 0.5;
 let mousedown = false;
 
@@ -295,3 +296,9 @@ const currentTime = () => {
 }
 
 video.addEventListener('timeupdate', currentTime);
+
+fullScreen.addEventListener('click', (event) => {
+  if (event.target.classList.contains('video__controls-fullscreen-icon')) {
+    video.requestFullscreen();
+  }
+});

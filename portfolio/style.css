@@ -26,6 +26,16 @@
   src: url("./fonts/Merriweather/Merriweather-Bold.ttf");
 }
 
+@-webkit-keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 :root {
   --color-gold: #bdae82;
   --color-black: #000;
@@ -550,16 +560,6 @@ ul {
   color: var(--color-gold);
 }
 
-@-webkit-keyframes fade-in {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-@keyframes fade-in {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
 .portfolio__images {
   width: 1400px;
   height: 1145px;
@@ -594,6 +594,11 @@ ul {
 }
 
 .video__play-button-wrapper {
+  display: none;
+}
+
+.paused .video__play-button-wrapper {
+  display: block;
   width: 130px;
   height: 130px;
   position: absolute;
@@ -679,23 +684,29 @@ ul {
 .video__controls-play,
 .video__controls-play-icon,
 .video__controls-speaker,
-.video__controls-speaker-icon {
+.video__controls-speaker-icon,
+.video__controls-fullscreen,
+.video__controls-fullscreen-icon {
   width: 30px;
   height: 30px;
 }
 
 .video__controls-play,
-.video__controls-speaker {
+.video__controls-speaker,
+.video__controls-fullscreen {
   background-color: transparent;
   border: none;
+  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: filter 0.3s;
 }
 
 .video__controls-play:hover,
-.video__controls-speaker:hover {
+.video__controls-speaker:hover,
+.video__controls-fullscreen:hover {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
       contrast(87%);
   transition: filter 0.3s;
@@ -741,7 +752,8 @@ ul {
 }
 
 .video__controls-progress,
-.video__controls-volume {
+.video__controls-volume,
+.video__controls-fullscreen {
   height: 10px;
   -webkit-appearance: none;
   cursor: pointer;
@@ -792,6 +804,11 @@ ul {
   border-radius: 50%;
   background: #F0F0F0;
   -webkit-appearance: none;
+}
+
+.video__controls-fullscreen-icon {
+  filter: invert(100%) sepia(0%) saturate(431%) hue-rotate(353deg) brightness(118%) contrast(88%);
+  transition: filter 0.3s;
 }
 
 .price__title {
@@ -1399,13 +1416,13 @@ ul {
     margin: 50px auto 80px auto;
   }
 
-  .video__play-button-wrapper {
-    width: 75px;
-    height: 75px;
+  .paused .video__play-button-wrapper {
+    width: 65px;
+    height: 65px;
     position: absolute;
     top: 0;
-    left: calc(50% - 32.5px);
-    top: calc(50% - 32.5px);
+    left: calc(50% - 37.5px);
+    top: calc(50% - 37.5px);
     z-index: 2;
   }
 
@@ -1620,6 +1637,10 @@ ul {
   .portfolio__title.ru {
     padding: 0;
     width: 220px;
+  }
+
+  .video__controls-volume-container {
+    width: 50%;
   }
 
   .price__title.ru {
