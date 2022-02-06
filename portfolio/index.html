@@ -19,21 +19,33 @@
         <nav class="nav change">
           <ul class="nav__items">
             <li class="nav__item">
-              <a class="nav__link link change" href="#skills" data-i18n="skills">Skills</a>
+              <a class="nav__link link change" href="#skills" data-i18n="skills"
+                >Skills</a
+              >
             </li>
             <li class="nav__item">
-              <a class="nav__link link change" href="#portfolio" data-i18n="portfolio"
+              <a
+                class="nav__link link change"
+                href="#portfolio"
+                data-i18n="portfolio"
                 >Portfolio</a
               >
             </li>
             <li class="nav__item">
-              <a class="nav__link link change" href="#video" data-i18n="video">Video</a>
+              <a class="nav__link link change" href="#video" data-i18n="video"
+                >Video</a
+              >
             </li>
             <li class="nav__item">
-              <a class="nav__link link change" href="#price" data-i18n="price">Price</a>
+              <a class="nav__link link change" href="#price" data-i18n="price"
+                >Price</a
+              >
             </li>
             <li class="nav__item">
-              <a class="nav__link link change" href="#contacts" data-i18n="contacts"
+              <a
+                class="nav__link link change"
+                href="#contacts"
+                data-i18n="contacts"
                 >Contacts</a
               >
             </li>
@@ -50,9 +62,11 @@
             src="./img/svg/sun.svg"
             alt="Theme Icon"
           />
-          <img 
-          class="theme__icon crescent change"
-          src="./img/svg/crescent.svg" alt="Theme Icon">
+          <img
+            class="theme__icon crescent change"
+            src="./img/svg/crescent.svg"
+            alt="Theme Icon"
+          />
         </div>
         <div class="burger change">
           <div class="burger__line1 change"></div>
@@ -69,13 +83,17 @@
             Save sincere emotions, romantic feelings and happy moments of life
             together with professional photographer Alexa Rise
           </p>
-          <button class="hero__button button change" data-i18n="hire">Hire me</button>
+          <button class="hero__button button change" data-i18n="hire">
+            Hire me
+          </button>
         </div>
       </section>
       <div class="container">
         <section class="skills" id="skills">
           <div class="skills__h2-wrapper h2-wrapper change">
-            <h2 class="skills__title title change" data-i18n="skills">Skills</h2>
+            <h2 class="skills__title title change" data-i18n="skills">
+              Skills
+            </h2>
           </div>
           <ul class="skills__items">
             <li class="skills__item">
@@ -84,8 +102,13 @@
                 src="./img/svg/skills-camera.svg"
                 alt="Camera Icon"
               />
-              <h4 class="skill__title change" data-i18n="skill-title-1">Digital photography</h4>
-              <p class="skills__description text change" data-i18n="skill-text-1">
+              <h4 class="skill__title change" data-i18n="skill-title-1">
+                Digital photography
+              </h4>
+              <p
+                class="skills__description text change"
+                data-i18n="skill-text-1"
+              >
                 High-quality photos in the studio and on the nature
               </p>
             </li>
@@ -95,8 +118,13 @@
                 src="./img/svg/skills-video.svg"
                 alt="Video Icon"
               />
-              <h4 class="skill__title change" data-i18n="skill-title-2">Video shooting</h4>
-              <p class="skills__description text change" data-i18n="skill-text-2">
+              <h4 class="skill__title change" data-i18n="skill-title-2">
+                Video shooting
+              </h4>
+              <p
+                class="skills__description text change"
+                data-i18n="skill-text-2"
+              >
                 Capture your moments so that they always stay with you
               </p>
             </li>
@@ -106,8 +134,13 @@
                 src="./img/svg/skills-image.svg"
                 alt="Landscape Icon"
               />
-              <h4 class="skill__title change" data-i18n="skill-title-3">Retouch</h4>
-              <p class="skills__description text change" data-i18n="skill-text-3">
+              <h4 class="skill__title change" data-i18n="skill-title-3">
+                Retouch
+              </h4>
+              <p
+                class="skills__description text change"
+                data-i18n="skill-text-3"
+              >
                 I strive to make photography surpass reality
               </p>
             </li>
@@ -117,8 +150,13 @@
                 src="./img/svg/skills-mic.svg"
                 alt="Microphone Icon"
               />
-              <h4 class="skill__title change" data-i18n="skill-title-4">Audio</h4>
-              <p class="skills__description text change" data-i18n="skill-text-4">
+              <h4 class="skill__title change" data-i18n="skill-title-4">
+                Audio
+              </h4>
+              <p
+                class="skills__description text change"
+                data-i18n="skill-text-4"
+              >
                 Professional sounds recording for video, advertising, portfolio
               </p>
             </li>
@@ -217,7 +255,8 @@
           <div class="h2-wrapper change">
             <h2 class="video__title title change" data-i18n="video">Video</h2>
           </div>
-          <div class="video__thumbnail">
+          <div class="video__thumbnail paused">
+            <video class="video__screen" src="./video/video.mp4" poster="./img/jpg/video-player.jpg"></video>
             <div class="video__play-button-wrapper">
               <button class="video__play-button">
                 <img
@@ -226,6 +265,63 @@
                   alt="Play Button"
                 />
               </button>
+            </div>
+            <div class="video__controls unused">
+              <div class="video__controls-progress-bar">
+                <input
+                  type="range"
+                  class="video__controls-progress"
+                  min="0"
+                  max="1"
+                  step="0.001"
+                  value="0"
+                />
+              </div>
+              <div class="video__controls-board">
+                <div class="video__controls-play-container">
+                  <button class="video__controls-play">
+                    <img
+                      class="video__controls-play-icon icon-play"
+                      src="./img/svg/play.svg"
+                      alt="Play Icon"
+                    />
+                    <img
+                      src="./img/svg/pause.svg"
+                      alt=""
+                      class="video__controls-play-icon icon-pause"
+                    />
+                  </button>
+                  <div class="video__controls-time">
+                    <span class="video__controls-time-current">0:00</span
+                    > <span>/</span> <span class="video__controls-time-duration">0:00</span>
+                  </div>
+                </div>
+                <div class="video__controls-volume-container">
+                  <button class="video__controls-speaker">
+                    <img
+                      src="./img/svg/volume.svg"
+                      alt="Speaker"
+                      class="video__controls-speaker-icon icon-speaker-on"
+                    />
+                    <img
+                      src="./img/svg/mute.svg"
+                      alt="Mute"
+                      class="video__controls-speaker-icon icon-speaker-off"
+                    />
+                  </button>
+                  <input
+                    type="range"
+                    class="video__controls-volume"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="0.5"
+                  />
+                  <button class="video__controls-fullscreen">
+                    <img src="./img/svg/fullscreen.svg" alt="" class="video__controls-fullscreen-icon">
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -339,10 +435,7 @@
           </ul>
         </section>
         <section class="contacts change" id="contacts">
-          <h2
-            class="contacts__title title change"
-            data-i18n="contact-me"
-          >
+          <h2 class="contacts__title title change" data-i18n="contact-me">
             Contact me
           </h2>
           <form
@@ -371,7 +464,10 @@
               placeholder="Message"
               data-i18n="message"
             ></textarea>
-            <button class="contacts__button button change" data-i18n="send-message">
+            <button
+              class="contacts__button button change"
+              data-i18n="send-message"
+            >
               Send message
             </button>
           </form>
