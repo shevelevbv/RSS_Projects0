@@ -167,7 +167,8 @@ function changeClassPaused(event) {
   if (
     event.target.classList.contains("video__screen") ||
     event.target.classList.contains("video__play-button") ||
-    event.target.classList.contains("video__controls-play-icon")
+    event.target.classList.contains("video__controls-play") ||
+    event.target.classList.contains("video__controls-play-button")
   ) {
     thumbnail.classList.toggle("paused");
   }
