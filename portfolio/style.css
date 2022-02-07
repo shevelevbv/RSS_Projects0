@@ -760,17 +760,18 @@ ul {
 
 .video__controls-time {
   width: 80px;
-  color: var(--color-white);
+  color: #B3B3B3;
   display: flex;
   justify-content: space-between;
+  cursor: default;
 }
 
 .video__controls-time-current {
-  width: 35px;
+  width: 33px;
 }
 
 .video__controls-time-duration {
-  width: 35px;
+  width: 33px;
 }
 
 .video__controls-progress {
@@ -798,14 +799,13 @@ ul {
 
 .video__controls-progress::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 0px;
-  height: 0px;
+  display: none;
   border-radius: 50%;
   background: #f0f0f0;
-  -webkit-appearance: none;
 }
 
 .video__controls-progress:hover::-webkit-slider-thumb {
+  display: block;
   width: 20px;
   height: 20px;
 }
