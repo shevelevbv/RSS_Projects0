@@ -256,7 +256,11 @@
             <h2 class="video__title title change" data-i18n="video">Video</h2>
           </div>
           <div class="video__thumbnail paused">
-            <video class="video__screen" src="./video/video.mp4" poster="./img/jpg/video-player.jpg"></video>
+            <video
+              class="video__screen"
+              src="./video/video.mp4"
+              poster="./img/jpg/video-player.jpg"
+            ></video>
             <div class="video__play-button-wrapper">
               <button class="video__play-button">
                 <img
@@ -279,21 +283,13 @@
               </div>
               <div class="video__controls-board">
                 <div class="video__controls-play-container">
-                  <button class="video__controls-play">
-                    <img
-                      class="video__controls-play-icon icon-play"
-                      src="./img/svg/play.svg"
-                      alt="Play Icon"
-                    />
-                    <img
-                      src="./img/svg/pause.svg"
-                      alt=""
-                      class="video__controls-play-icon icon-pause"
-                    />
-                  </button>
+                  <div class="video__controls-play">
+                    <button class="video__controls-play-button"></button>
+                  </div>
                   <div class="video__controls-time">
-                    <span class="video__controls-time-current">0:00</span
-                    > <span>/</span> <span class="video__controls-time-duration">0:00</span>
+                    <span class="video__controls-time-current">0:00</span>
+                    <span>/</span>
+                    <span class="video__controls-time-duration">0:00</span>
                   </div>
                 </div>
                 <div class="video__controls-volume-container">
@@ -318,7 +314,11 @@
                     value="0.5"
                   />
                   <button class="video__controls-fullscreen">
-                    <img src="./img/svg/fullscreen.svg" alt="" class="video__controls-fullscreen-icon">
+                    <img
+                      src="./img/svg/fullscreen.svg"
+                      alt=""
+                      class="video__controls-fullscreen-icon"
+                    />
                   </button>
                 </div>
               </div>
@@ -491,8 +491,11 @@
             class="school-page__link link change"
             href="https://rs.school/js/"
             target="_blank"
-            >Rolling Scopes School</a
-          >
+            ><img
+              src="./img/svg/rs_school_js.svg"
+              alt="RS logo"
+              class="school-page__rs-logo icon change"
+          /></a>
         </div>
         <ul class="social-media">
           <li class="social-media__logo icon change">
