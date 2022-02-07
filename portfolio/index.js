@@ -286,7 +286,7 @@ video.addEventListener("play", () => {
   thumbnail.classList.remove("paused");
 });
 
-progressBar.addEventListener("change", (event) => {
+progressBar.addEventListener("input", (event) => {
   video.currentTime = event.target.value * video.duration;
 });
 
