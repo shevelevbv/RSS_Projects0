@@ -84,6 +84,7 @@ html {
   background-color: transparent;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .search__input {
