@@ -10,8 +10,8 @@ function changeClassActive(event) {
 function showData(data) {
   galleryContainer.innerHTML='';
   data.results.forEach(result => {
-    const img = `<img class="gallery-img" src="${result.urls.regular}" alt="image">`;
-    galleryContainer.insertAdjacentHTML('beforeend', img);
+   const imgDiv = `<div class="gallery-img-container"><div class="gallery-img" style="background-image: url('${result.urls.regular}');"></div></div>`;
+   galleryContainer.insertAdjacentHTML('beforeend', imgDiv);
   });
 }
 
@@ -45,7 +45,11 @@ abortButton.addEventListener('click', () => {
 });
 
 searchButton.addEventListener('click', (e) => {
-  url = `https://api.unsplash.com/search/photos?query=${inputField.value}&per_page=30&orientation=landscape&client_id=XQUT0q52fxns9T7AE-4ln2WikpU5lhHuUPpJQJT-F3M`;
+  if (inputField.value.trim() !== '') {
+      url = `https://api.unsplash.com/search/photos?query=${inputField.value}&per_page=30&orientation=landscape&client_id=XQUT0q52fxns9T7AE-4ln2WikpU5lhHuUPpJQJT-F3M`;
+  } else {
+    url = 'https://api.unsplash.com/search/photos?query=question&&per_page=30&orientation=landscape&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
+  }
   getData();
   inputField.blur(); 
 });
