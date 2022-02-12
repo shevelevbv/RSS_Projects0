@@ -25,7 +25,7 @@ const inputContainer = document.querySelector('.search');
 const searchButton = document.querySelector('.search__button');
 const inputField = document.querySelector('.search__input');
 const abortButton = document.querySelector('.search__abort');
-let url = 'https://api.unsplash.com/search/photos?query=welcome&per_page=30&orientation=landscape&client_id=XQUT0q52fxns9T7AE-4ln2WikpU5lhHuUPpJQJT-F3M';
+let url = 'https://api.unsplash.com/search/photos?query=hello&per_page=30&orientation=landscape&client_id=XQUT0q52fxns9T7AE-4ln2WikpU5lhHuUPpJQJT-F3M';
 const galleryContainer = document.querySelector('.images');
 
 window.addEventListener('load', getData());

@@ -42,6 +42,7 @@ body {
   height: 70vh;
   background-image: url('./assets/jpg/Port_2_Background.jpg');
   background-size: cover;
+  background-position: center;
   padding: 0 20px 0 20px;
   display: flex;
   flex-direction: column;
@@ -145,7 +146,7 @@ body {
 
 .gallery-img-container {
   width: 100%;
-  height: calc((100vw - 40px) / 5);
+  height: calc((100vw - 40px) / 6);
   overflow: hidden;
   position: relative;
 }
@@ -155,6 +156,10 @@ body {
   height: 100%;
   object-fit: cover;
   background-size: cover;
+  background-position: center;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
   transition: all 0.3s ease-in;
 }
 
