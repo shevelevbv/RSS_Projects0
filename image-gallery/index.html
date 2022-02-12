@@ -10,40 +10,35 @@
   <body>
     <main>
       <section class="launchpad">
-        <div class="title">
-          <div class="title__icon-container">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 64 64"
-              aria-labelledby="title"
-              aria-describedby="desc"
-              role="img"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <title>Photo Camera</title>
-              <desc>A solid styled icon from Orion Icon Library.</desc>
-              <path
-                data-name="layer1"
-                d="M44.6 36.6a2 2 0 0 0 0 2.8 2 2 0 0 0 2.8 0A2 2 0 0 0 48 38a2 2 0 0 0-.6-1.4 2.1 2.1 0 0 0-2.8 0z"
-                fill="#202020"
-              ></path>
-              <path
-                data-name="layer2"
-                d="M59 18H36.6L30 10H14l-6.6 8H5a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h54a3 3 0 0 0 3-3V21a3 3 0 0 0-3-3zM30 46H10V28h20zm16 0a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"
-                fill="#202020"
-              ></path>
-              <path
-                data-name="layer1"
-                fill="#202020"
-                d="M46 10h10v4H46z"
-              ></path>
-            </svg>
-          </div>
-          <h1 class="title__name">
-            <span class="title__name-first">Unsplash</span>
-            <span class="title__name-second">API</span>
-          </h1>
+        <div class="title__icon-container">
+          <svg
+            class="title__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 64 64"
+            aria-labelledby="title"
+            aria-describedby="desc"
+            role="img"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <title>Photo Camera</title>
+            <desc>A solid styled icon from Orion Icon Library.</desc>
+            <path
+              data-name="layer1"
+              d="M44.6 36.6a2 2 0 0 0 0 2.8 2 2 0 0 0 2.8 0A2 2 0 0 0 48 38a2 2 0 0 0-.6-1.4 2.1 2.1 0 0 0-2.8 0z"
+              fill="#202020"
+            ></path>
+            <path
+              data-name="layer2"
+              d="M59 18H36.6L30 10H14l-6.6 8H5a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h54a3 3 0 0 0 3-3V21a3 3 0 0 0-3-3zM30 46H10V28h20zm16 0a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"
+              fill="#202020"
+            ></path>
+            <path data-name="layer1" fill="#202020" d="M46 10h10v4H46z"></path>
+          </svg>
         </div>
+        <h1 class="title__name">
+          <span class="title__name-first">Unsplash</span>
+          <span class="title__name-second">API</span>
+        </h1>
         <div class="search">
           <button class="search__button input-button">
             <svg
@@ -86,6 +81,7 @@
           target="_blank"
         >
           <svg
+            class="github__logo footer__logo"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 64 64"
             aria-labelledby="title"
@@ -112,13 +108,17 @@
       <div class="rs-school">
         <a href="https://rs.school/js" class="rs-school__link" target="_blank">
           <img
-            class="rs-school__logo"
-            src="./rs_school.svg"
+            class="rs-school__logo footer__logo"
+            src="./assets/svg/rs_school.svg"
             alt="RS School Logo"
           />
         </a>
       </div>
     </footer>
+    <div class="window-line window-line-left"></div>
+    <div class="window-line window-line-top"></div>
+    <div class="window-line window-line-right"></div>
+    <div class="window-line window-line-bottom"></div>
     <script src="index.js"></script>
   </body>
 </html>

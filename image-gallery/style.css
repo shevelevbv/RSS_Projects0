@@ -39,24 +39,29 @@ body {
 
 .launchpad {
   width: 100%;
-  height: 100px;
+  height: 70vh;
+  background-image: url('./assets/jpg/Port_2_Background.jpg');
+  background-size: cover;
   padding: 0 20px 0 20px;
-  border-bottom: 2px solid orange;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
-.title {
-  width: 330px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.title__icon-container {
+  width: 70px;
+  height: auto;
+}
+
+.title__icon {
+  filter: invert(100%);
 }
 
 .title__name {
   font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
+  font-size: 50px;
+  color: white;
 }
 
 .title__name-first {
@@ -67,15 +72,10 @@ body {
   font-weight: 600;
 }
 
-.title__icon-container {
-  width: 50px;
-  height: 50px;
-}
-
 .search {
-  width: 350px;
+  width: 40%;
   height: 40px;
-  border: 1px solid black;
+  border: 1px solid #D5D5D5;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -91,22 +91,25 @@ body {
   outline: none;
   border: none;
   cursor: pointer;
+  filter: invert(98%) sepia(0%) saturate(2020%) hue-rotate(172deg) brightness(92%) contrast(82%);
 }
 
 .search__input {
-  width: 300px;
+  width: 90%;
   height: 35px;
   border: none;
+  background-color: transparent;
   font-family: Inter, sans-serif;
   font-size: 20px;
+  color: #D5D5D5;
 }
 
 .active .search__input {
-  width: 270px;
+  width: 80%;
 }
 
 .search__input::placeholder {
-  color: rgb(224, 219, 219);
+  color: rgb(78, 76, 76);
 }
 
 .search__input:focus {
@@ -128,8 +131,8 @@ body {
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 20px;
+  row-gap: 20px;
 }
 
 .gallery-img-container {
@@ -161,6 +164,15 @@ body {
   align-items: center;
 }
 
+.footer__logo {
+  transition: all 0.3s;
+}
+
+.footer__logo:hover {
+  filter: invert(70%) sepia(68%) saturate(535%) hue-rotate(153deg) brightness(87%) contrast(87%);
+  transition: all 0.3s;
+}
+
 .github {
   width: 50px;
   height: auto;
@@ -177,5 +189,38 @@ body {
 .rs-school {
   width: 100px;
   height: auto;
+}
+
+.window-line {
+  background-color: white;
+  position: fixed;
+}
+
+.window-line-left {
+  width: 20px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.window-line-top {
+  height: 20px;
+  top: 0;
+  left: 0; 
+  right: 0;
+}
+
+.window-line-right {
+  width: 20px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.window-line-bottom {
+  height: 20px;
+  bottom: 0;
+  left: 0; 
+  right: 0;
 }
 
