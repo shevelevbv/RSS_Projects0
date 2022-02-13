@@ -77,7 +77,7 @@ body {
 }
 
 .search {
-  width: 40%;
+  width: 50%;
   height: 40px;
   border: 1px solid #D5D5D5;
   border-radius: 20px;
@@ -310,3 +310,35 @@ body {
   right: 0;
 }
 
+@media (max-width: 768px) {
+  .search {
+    width: 80%;
+  }
+
+  .images {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-img-container {
+    height: calc((100vw - 40px) / 4);
+  }
+}
+
+@media (max-width: 550px) {
+  .images {
+    grid-template-columns: 100%;
+  }
+
+  .gallery-img-container {
+    height: calc((100vw - 40px) / 2);
+  }
+}
+
+@media (max-width: 390px) {
+  .title__name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
