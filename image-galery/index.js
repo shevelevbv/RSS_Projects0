@@ -9,6 +9,11 @@ function changeClassActive(event) {
 
 function showData(data) {
   galleryContainer.innerHTML='';
+  if (data.results.length === 0) {
+    const emptyAlert = `<p class="empty-alert">Nothing found. Please try another search.</p>`;
+    galleryContainer.insertAdjacentHTML('beforeend', emptyAlert);
+    return;
+  }
   data.results.forEach(result => {
    const imgDiv = `<div class="gallery-img-container"><div class="gallery-img" style="background-image: url('${result.urls.regular}');"></div><a class="image-link" href="${result.links.html}" target="_blank"><div class="description-container"><div class="user-container"><img class="image-user" src="${result.user.profile_image.medium}" alt="user image"/><p class="image-description">${result.user.name}</p></div><div class="likes-container"><img class="heart-icon" src="./assets/svg/heart.svg"><p class="likes-count">${result.likes}</p></div></div></a></div>`;
    galleryContainer.insertAdjacentHTML('beforeend', imgDiv);
