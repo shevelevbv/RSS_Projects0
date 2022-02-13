@@ -341,4 +341,8 @@ body {
     justify-content: center;
     align-items: center;
   }
+
+  .search {
+    padding-left: 10px;
+  }
 }
