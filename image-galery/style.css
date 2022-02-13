@@ -35,6 +35,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 .launchpad {
@@ -280,13 +281,14 @@ body {
 }
 
 .footer__logo {
+  cursor: pointer;
   transition: all 0.5s;
 }
 
 @media not all and (hover: none) {
   .footer__logo:hover {
     filter: invert(78%) sepia(56%) saturate(506%) hue-rotate(114deg)
-      brightness(92%) contrast(91%);
+      brightness(92%) contrast(91%) drop-shadow(1px 1px 0 rgb(0 0 0 / 0.4));;
     transition: all 0.5s;
   }
 }
@@ -296,17 +298,26 @@ body {
   height: auto;
 }
 
+.github__logo {
+  filter: invert(61%) sepia(0%) saturate(1298%) hue-rotate(194deg) brightness(93%) contrast(86%) drop-shadow(1px 1px 0 rgb(0 0 0 / 0.4));;
+}
+
 .copyright {
   display: block;
   width: 60px;
   font-family: Inter, sans-serif;
   font-weight: 400;
   font-size: 15px;
+  color: #8D8D8D;
 }
 
 .rs-school {
   width: 100px;
   height: auto;
+}
+
+.rs-school__logo {
+  filter: invert(61%) sepia(0%) saturate(1298%) hue-rotate(194deg) brightness(93%) contrast(86%) drop-shadow(1px 1px 0 rgb(0 0 0 / 0.4));;
 }
 
 .window-line {
