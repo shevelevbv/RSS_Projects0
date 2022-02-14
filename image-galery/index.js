@@ -29,7 +29,7 @@ async function getData() {
 const inputContainer = document.querySelector('.search');
 const searchButton = document.querySelector('.search__button');
 const inputField = document.querySelector('.search__input');
-const abortButton = document.querySelector('.search__abort');
+const clearButton = document.querySelector('.search__clear');
 let url = 'https://api.unsplash.com/search/photos?query=hello&per_page=30&orientation=landscape&client_id=XQUT0q52fxns9T7AE-4ln2WikpU5lhHuUPpJQJT-F3M';
 const galleryContainer = document.querySelector('.images');
 
@@ -41,9 +41,9 @@ inputField.addEventListener('keyup', (e) => {
   if (e.keyCode === 13) {
     searchButton.click();
   }
-})
+});
 
-abortButton.addEventListener('click', () => {
+clearButton.addEventListener('click', () => {
   inputField.value="";
   inputContainer.classList.remove('active');
   inputField.focus();
