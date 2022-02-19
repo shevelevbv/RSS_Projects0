@@ -63,13 +63,19 @@ body {
   justify-content: center;
   align-items: center;
   backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 }
 
 .card-image-front {
   transform: rotateY(180deg);
+  background: white;
 }
 
-.front-face,
+.front-face {
+  width: 70%;
+  height: 70%;
+}
+
 .back-face {
   width: 60%;
   height: 60%;
@@ -78,6 +84,8 @@ body {
 .back-face {
   filter: invert(87%) sepia(27%) saturate(412%) hue-rotate(76deg) brightness(103%) contrast(95%) drop-shadow(2px 1px 2px rgb(158, 161, 161));
 }
+
+
 
 
 
