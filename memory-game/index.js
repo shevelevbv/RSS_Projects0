@@ -1,11 +1,15 @@
 const cards = document.querySelectorAll('.card');
-const scoreScreen = document.querySelector('.score-number');
+const scoreTitle = document.querySelector('.score__title');
+const scoreScreen = document.querySelector('.score__number');
+const challengeGame = document.querySelector('.challenge-game');
+const classicGame = document.querySelector('.classic-game');
+let classic = true;
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
 let matchCounter = 0;
 let tryCounter = 0;
-let userScore = 3;
+let userScore = 4;
 let points = 0;
 
 function flipCard(e) {
@@ -37,7 +41,14 @@ function checkForMatch() {
   }
   
   updateScore('-');
-  unflipCards();                                                           
+  unflipCards();  
+  if (!classic) {
+    if (userScore <= 0) {
+    setTimeout(() => {
+      endGame();
+    }, 1000);
+  }  
+  }                                                     
 }
 
 function disableCards() {
@@ -48,7 +59,13 @@ function disableCards() {
 }
 
 function endGame() {
-  console.log('won');
+  if (userScore <= 0) {
+    console.log('lost');
+    cards.forEach(card => card.classList.add('flip'))
+    lockBoard = true;
+  } else {
+    console.log('won');
+  }
 }
 
 function resetBoard() {
@@ -78,16 +95,20 @@ function updateScore(sign) {
       points--;
     } 
   userScore += points;
+  if (userScore < 0) {
+    userScore = 0;
+  }
+  scoreScreen.textContent = classic ? tryCounter : userScore;
 }
 
-(function shuffle() {
+function shuffle() {
   cards.forEach(card => {
     let randomNum = Math.floor(Math.random() * 20);
     card.style.order = randomNum;
   });
-})();
+};
 
-(function showAll() {
+function showAll() {
   lockBoard = true;
   cards.forEach(card => card.removeEventListener('click', flipCard));
   cards.forEach(card => {
@@ -101,6 +122,30 @@ function updateScore(sign) {
       resetBoard();
     }, 4000);
   });
-})();
+};
 
-cards.forEach(card => card.addEventListener('click', flipCard));
+classicGame.addEventListener('click', () => {
+  tryCounter = 0;
+  matchCounter = 0;
+  classic = true;
+  lockBoard = false;
+  scoreTitle.textContent = 'Moves:';
+  scoreScreen.textContent = tryCounter;
+  cards.forEach(card => card.classList.remove('flip'));
+  setTimeout(shuffle, 1000);
+  cards.forEach(card => card.addEventListener('click', flipCard));
+});
+
+challengeGame.addEventListener('click', () => {
+  matchCounter = 0;
+  tryCounter = 0;
+  userScore = 4;
+  points = 0;
+  classic = false;
+  scoreTitle.textContent = 'Score:';
+  scoreScreen.textContent = userScore;
+  cards.forEach(card => card.classList.remove('flip'));
+  setTimeout(shuffle, 1000);
+  showAll();
+  cards.forEach(card => card.addEventListener('click', flipCard));
+});
