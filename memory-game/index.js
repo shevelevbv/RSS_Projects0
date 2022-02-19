@@ -124,6 +124,10 @@ function showAll() {
   });
 };
 
+scoreScreen.textContent = tryCounter;
+shuffle();
+cards.forEach(card => card.addEventListener('click', flipCard));
+
 classicGame.addEventListener('click', () => {
   tryCounter = 0;
   matchCounter = 0;
