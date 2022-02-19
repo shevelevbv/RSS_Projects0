@@ -17,6 +17,10 @@ body {
   user-select: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .game {
   width: 100%;
 }

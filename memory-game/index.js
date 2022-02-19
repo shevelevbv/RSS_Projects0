@@ -133,6 +133,7 @@ classicGame.addEventListener('click', () => {
   scoreScreen.textContent = tryCounter;
   cards.forEach(card => card.classList.remove('flip'));
   setTimeout(shuffle, 1000);
+  resetBoard();
   cards.forEach(card => card.addEventListener('click', flipCard));
 });
 
