@@ -5,6 +5,7 @@ const challengeGame = document.querySelector('.challenge-game');
 const classicGame = document.querySelector('.classic-game');
 let classic = true;
 let hasFlippedCard = false;
+let lockButton = false;
 let firstCard, secondCard;
 let lockBoard = false;
 let matchCounter = 0;
@@ -69,8 +70,37 @@ function endGame() {
 }
 
 function resetBoard() {
-  [hasFlippedCard, lockBoard] = [false, false];
+  [hasFlippedCard, lockBoard, lockButton] = [false, false, false];
   [firstCard, secondCard] = [null, null];
+}
+
+function resetGame() {
+  tryCounter = 0;
+  matchCounter = 0;
+
+  if (classic) {
+    lockBoard = false;
+    scoreTitle.textContent = 'Moves:';
+    scoreScreen.textContent = tryCounter;
+
+  } else {
+    userScore = 4;
+    points = 0;
+    scoreTitle.textContent = 'Score:';
+    scoreScreen.textContent = userScore;
+  }
+  
+  cards.forEach(card => card.classList.remove('flip'));
+  setTimeout(shuffle, 1000);
+
+  if (classic) {
+    resetBoard();
+  } else {
+    lockButton = true;
+    showAll();
+  }
+  
+  cards.forEach(card => card.addEventListener('click', flipCard));
 }
 
 function unflipCards() {
@@ -88,12 +118,12 @@ function updateScore(sign) {
       points = 0;
     }
       points++;
-    } else if (sign === '-') {
-      if (points > 0) {
+  } else if (sign === '-') {
+        if (points > 0) {
         points = 0;
-      }
+        }
       points--;
-    } 
+  } 
   userScore += points;
   if (userScore < 0) {
     userScore = 0;
@@ -129,28 +159,12 @@ shuffle();
 cards.forEach(card => card.addEventListener('click', flipCard));
 
 classicGame.addEventListener('click', () => {
-  tryCounter = 0;
-  matchCounter = 0;
+  if (lockButton) return;
   classic = true;
-  lockBoard = false;
-  scoreTitle.textContent = 'Moves:';
-  scoreScreen.textContent = tryCounter;
-  cards.forEach(card => card.classList.remove('flip'));
-  setTimeout(shuffle, 1000);
-  resetBoard();
-  cards.forEach(card => card.addEventListener('click', flipCard));
+  resetGame();
 });
 
 challengeGame.addEventListener('click', () => {
-  matchCounter = 0;
-  tryCounter = 0;
-  userScore = 4;
-  points = 0;
   classic = false;
-  scoreTitle.textContent = 'Score:';
-  scoreScreen.textContent = userScore;
-  cards.forEach(card => card.classList.remove('flip'));
-  setTimeout(shuffle, 1000);
-  showAll();
-  cards.forEach(card => card.addEventListener('click', flipCard));
+  resetGame();
 });
