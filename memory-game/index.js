@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll('.card');
+const score = document.querySelector('.score');
 const scoreTitle = document.querySelector('.score__title');
 const scoreScreen = document.querySelector('.score__number');
 const challengeGame = document.querySelector('.challenge-game');
@@ -8,6 +9,7 @@ const mask = document.querySelector('.mask');
 const endGameContainer = document.querySelector('.end-game');
 const endGameOk = document.querySelector('.end-game__ok');
 const endGameMessage = document.querySelector('.end-game__message');
+const endGameResult = document.querySelector('.end-game__result');
 let classic = true;
 let hasFlippedCard = false;
 let lockButton = false;
@@ -17,7 +19,6 @@ let matchCounter = 0;
 let tryCounter = 0;
 let userScore = 4;
 let points = 0;
-let lostGame = false;
 
 
 function flipCard(e) {
@@ -67,18 +68,21 @@ function disableCards() {
 }
 
 function endGame() {
+  score.classList.add('hide');
   if (userScore <= 0) {
-    console.log('lost');
-    lostGame = true;
     cards.forEach(card => card.classList.add('flip'));
-    mask.classList.add('show');
     endGameMessage.textContent = 'Sorry, you lost :(';
-    endGameContainer.classList.add('show');
-    endGameOk.classList.add('active');
     lockBoard = true;
+    endGameOk.classList.add('active');
   } else {
-    console.log('won');
+    if (classic) {
+      endGameMessage.textContent = 'Congratulations!';
+      endGameResult.textContent = `Total moves: ${tryCounter}`;
+      endGameOk.classList.add('active');
+    }
   }
+  mask.classList.add('show');
+  endGameContainer.classList.add('show');
 }
 
 function resetBoard() {
@@ -197,8 +201,10 @@ popNumber.addEventListener('animationend', () => {
 });
 
 endGameOk.addEventListener('click', () => {
-  if (lostGame) {
-    mask.classList.remove('show');
-    endGameContainer.classList.remove('show');
-  }
+  endGameContainer.classList.remove('show');
+  mask.classList.remove('show');
+  endGameOk.classList.remove('active');
+  endGameResult.textContent = '';
+  score.classList.remove('hide');
+  classicGame.click();
 });

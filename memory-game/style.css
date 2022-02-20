@@ -67,6 +67,11 @@ p {
   color: white;
   position: relative;
   overflow: hidden;
+  visibility: visible;
+}
+
+.score.hide {
+  visibility: hidden;
 }
 
 .score__number {
