@@ -82,7 +82,6 @@ function resetGame() {
     lockBoard = false;
     scoreTitle.textContent = 'Moves:';
     scoreScreen.textContent = tryCounter;
-
   } else {
     userScore = 4;
     points = 0;
@@ -91,7 +90,7 @@ function resetGame() {
   }
   
   cards.forEach(card => card.classList.remove('flip'));
-  setTimeout(shuffle, 1000);
+  setTimeout(shuffle, 500);
 
   if (classic) {
     resetBoard();
