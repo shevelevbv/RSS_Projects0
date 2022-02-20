@@ -4,6 +4,10 @@ const scoreScreen = document.querySelector('.score__number');
 const challengeGame = document.querySelector('.challenge-game');
 const classicGame = document.querySelector('.classic-game');
 const popNumber = document.querySelector('.pop');
+const mask = document.querySelector('.mask');
+const endGameContainer = document.querySelector('.end-game');
+const endGameOk = document.querySelector('.end-game__ok');
+const endGameMessage = document.querySelector('.end-game__message');
 let classic = true;
 let hasFlippedCard = false;
 let lockButton = false;
@@ -13,6 +17,8 @@ let matchCounter = 0;
 let tryCounter = 0;
 let userScore = 4;
 let points = 0;
+let lostGame = false;
+
 
 function flipCard(e) {
   if (lockBoard) return;
@@ -63,7 +69,12 @@ function disableCards() {
 function endGame() {
   if (userScore <= 0) {
     console.log('lost');
-    cards.forEach(card => card.classList.add('flip'))
+    lostGame = true;
+    cards.forEach(card => card.classList.add('flip'));
+    mask.classList.add('show');
+    endGameMessage.textContent = 'Sorry, you lost :(';
+    endGameContainer.classList.add('show');
+    endGameOk.classList.add('active');
     lockBoard = true;
   } else {
     console.log('won');
@@ -183,4 +194,11 @@ challengeGame.addEventListener('click', () => {
 
 popNumber.addEventListener('animationend', () => {
   popNumber.classList.remove('animate');
+});
+
+endGameOk.addEventListener('click', () => {
+  if (lostGame) {
+    mask.classList.remove('show');
+    endGameContainer.classList.remove('show');
+  }
 });
