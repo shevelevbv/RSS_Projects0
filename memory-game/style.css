@@ -61,6 +61,28 @@ button {
   column-gap: 20px;
   font-family: PressStart2P, sans-serif;
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.score__number {
+  height: 100%;
+  position: relative;
+}
+
+.pop {
+  position: absolute;
+  top: 50%;
+  color: white;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.pop.animate {
+  visibility: visible;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 1s;
 }
 
 .game {

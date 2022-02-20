@@ -3,6 +3,7 @@ const scoreTitle = document.querySelector('.score__title');
 const scoreScreen = document.querySelector('.score__number');
 const challengeGame = document.querySelector('.challenge-game');
 const classicGame = document.querySelector('.classic-game');
+const popNumber = document.querySelector('.pop');
 let classic = true;
 let hasFlippedCard = false;
 let lockButton = false;
@@ -123,6 +124,18 @@ function updateScore(sign) {
         }
       points--;
   } 
+
+  if (!classic) {
+    popNumber.textContent = points > 0 ? '+' + points : points;
+    popNumber.style.color = points > 0 ? '#32f90e' : '#f92e0e';
+    setTimeout(() => {
+      popNumber.classList.add('animate');
+    }, 100);
+    setTimeout(() => {
+      popNumber.classList.remove('animate');
+    }, 500);
+  }
+  
   userScore += points;
   if (userScore < 0) {
     userScore = 0;
@@ -166,4 +179,8 @@ classicGame.addEventListener('click', () => {
 challengeGame.addEventListener('click', () => {
   classic = false;
   resetGame();
+});
+
+popNumber.addEventListener('animationend', () => {
+  popNumber.classList.remove('animate');
 });
