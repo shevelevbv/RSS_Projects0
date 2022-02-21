@@ -19,8 +19,10 @@ const recordsButton = document.querySelector('.records-button');
 let classic = true;
 let hasFlippedCard = false;
 let lockButton = false;
+let lockOkButton = false;
 let firstCard, secondCard;
 let lockBoard = false;
+let topScore = false;
 let matchCounter = 0;
 let tryCounter = 0;
 let userScore = 4;
@@ -55,11 +57,7 @@ let challengeHiScores = [
 let classicHiScores = [];
 let challengeHiScores = [];
 
-function updateScoreTable(scores) {
-  if (scores.length < 10) {
-
-  }
-}
+window.addEventListener('load', getLocalStorage);
 
 function flipCard(e) {
   if (lockBoard) return;
@@ -118,13 +116,19 @@ function endGame() {
     endGameMessage.textContent = 'Congratulations!';
     if (classic) {
       endGameResult.textContent = `Total moves: ${tryCounter}`;
-      if (classicHiScores < 10) {
+      if (classicHiScores.length < 10) {
+        lockOkButton = true;
+        topScore = true;
         endGameTopContainer.classList.add('show');
       }
     } else {
       endGameResult.textContent = `Total score: ${userScore}`;
-    }
-    endGameOk.classList.add('active');
+      if (challengeHiScores.length < 10) {
+        lockOkButton = true;
+        topScore = true;
+        endGameTopContainer.classList.add('show');
+      }
+    } 
   }
   mask.classList.add('show');
   endGameContainer.classList.add('show');
@@ -217,6 +221,21 @@ function updateScore(sign) {
   scoreScreen.textContent = classic ? tryCounter : userScore;
 }
 
+function setLocalStorage() {
+  localStorage.setItem('classicHiScores', JSON.stringify(classicHiScores));
+  localStorage.setItem('challengeHiScores', challengeHiScores);
+}
+
+function getLocalStorage() {
+  if (localStorage.getItem('classicHiScores')) {
+    classicHiScores = JSON.parse(localStorage.getItem('classicHiScores'));
+    console.log(classicHiScores[0]);
+  }
+  if (localStorage.getItem('challengeHiScores')) {
+    challengeHiScores = localStorage.getItem('challengeHiScores');
+  }
+}
+
 function shuffle() {
   cards.forEach(card => {
     let randomNum = Math.floor(Math.random() * 20);
@@ -240,6 +259,20 @@ function showAll() {
   });
 };
 
+function updateScores() {
+  let object = {};
+  object.player = playerName;
+  if (classic) {
+    object.moves = tryCounter;
+    classicHiScores.push(object);
+    classicHiScores.sort((a, b) => a.moves - b.moves);
+  } else {
+    object.score = userScore;
+    challengeHiScores.push(object);
+    classicHiScores.sort((a, b) => b.moves - a.moves);
+  }
+}
+
 scoreScreen.textContent = tryCounter;
 shuffle();
 cards.forEach(card => card.addEventListener('click', flipCard));
@@ -256,16 +289,36 @@ challengeGame.addEventListener('click', () => {
 });
 
 endGameOk.addEventListener('click', () => {
+  if (lockOkButton) return;
   endGameContainer.classList.remove('show');
   mask.classList.remove('show');
   endGameOk.classList.remove('active');
   endGameResult.textContent = '';
   score.classList.remove('hide');
   endGameTopContainer.classList.remove('show');
+  if (topScore) {
+    playerName = endGameTopInput.value;
+    topScore = false;
+    updateScores();
+  }
   classicGame.click();
 });
 
 recordsButton.addEventListener('click', () => {
-  populateTable();
+  if (!recordsContainer.classList.contains('show')) {
+    populateTable();
+  }
   recordsContainer.classList.toggle('show');
 });
+
+endGameTopInput.addEventListener('input', () => {
+  if (endGameTopInput.value.length !== 0) {
+    lockOkButton = false;
+    endGameOk.classList.add('active');
+  } else {
+    lockOkButton = true;
+    endGameOk.classList.remove('active');
+  }
+});
+
+window.addEventListener('beforeunload', setLocalStorage);
