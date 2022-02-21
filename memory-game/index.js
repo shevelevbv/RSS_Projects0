@@ -28,6 +28,7 @@ let tryCounter = 0;
 let userScore = 4;
 let points = 0;
 let playerName = '';
+let scoreChanged = false;
 /*
 let classicHiScores = [
                     {player: '', moves: 0},
@@ -141,17 +142,29 @@ function endGame() {
 }
 
 function populateTable() {
+  let classicHiScoresLength = classicHiScores.length;
+  let challengeHiScoresLength = challengeHiScores.length;
+  let classicEmptyRows = '';
+  for(let i = classicHiScoresLength + 1; i <= 10; i++) {
+    classicEmptyRows += `<tr><td>${i}</td><td></td><td></td></tr>`;
+  }
   classicTable.innerHTML = '';
   classicTable.innerHTML = '<tr><td>#</td><td>Player</td><td>Moves</td></tr>' + 
   classicHiScores.map((row, index) => {
     return `<tr><td>${index + 1}</td><td>${row.player}</td><td>${row.moves}</td></tr>`;
-  }).join('');
-
+  }).join('') + classicEmptyRows;
+  
+  let challengeEmptyRows = '';
+  for(let i = challengeHiScoresLength + 1; i <= 10; i++) {
+    challengeEmptyRows += `<tr><td>${i}</td><td></td><td></td></tr>`;
+  }
   challengeTable.innerHTML = '';
   challengeTable.innerHTML = '<tr><td>#</td><td>Player</td><td>Score</td></tr>' + 
   challengeHiScores.map((row, index) => {
     return `<tr><td>${index + 1}</td><td>${row.player}</td><td>${row.score}</td></tr>`;
-  }).join('');
+  }).join('') + challengeEmptyRows;
+
+  scoreChanged = false;
 }
 
 function resetBoard() {
@@ -277,8 +290,9 @@ function updateScores() {
   } else {
     object.score = userScore;
     challengeHiScores.push(object);
-    classicHiScores.sort((a, b) => b.moves - a.moves);
+    challengeHiScores.sort((a, b) => b.score - a.score);
   }
+  scoreChanged = true;
 }
 
 scoreScreen.textContent = tryCounter;
@@ -313,7 +327,7 @@ endGameOk.addEventListener('click', () => {
 });
 
 recordsButton.addEventListener('click', () => {
-  if (!recordsContainer.classList.contains('show')) {
+  if (scoreChanged) {
     populateTable();
   }
   recordsContainer.classList.toggle('show');
