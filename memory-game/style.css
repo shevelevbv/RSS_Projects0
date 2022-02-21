@@ -4,6 +4,24 @@
   src: url('./assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf');
 }
 
+@keyframes button-color-in {
+  0% {
+    background-color: #cfcccc;
+  }
+  100% {
+    background-color: rgb(252, 252, 48);
+  }
+}
+
+@keyframes button-color-out {
+  0% {
+    background-color: rgb(252, 252, 48);
+  }
+  100% {
+    background-color: #cfcccc;
+  }
+}
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -28,10 +46,22 @@ button {
   cursor: pointer;
   font-family: PressStart2P, sans-serif;
   font-size: 0.7rem;
+  outline: none;
 }
 
 p {
   text-align: center;
+}
+
+table {
+  width: 100%;
+  height: 80%;
+  color: white;
+}
+
+td {
+  text-align: center;
+  vertical-align: top;
 }
 
 .buttons {
@@ -110,6 +140,7 @@ p {
   perspective: 1000px;
   position: relative;
   z-index: 2;
+  overflow: hidden;
 }
 
 .card {
@@ -203,24 +234,6 @@ p {
   font-size: 13px;
 }
 
-@keyframes button-color-in {
-  0% {
-    background-color: #cfcccc;
-  }
-  100% {
-    background-color: rgb(252, 252, 48);
-  }
-}
-
-@keyframes button-color-out {
-  0% {
-    background-color: rgb(252, 252, 48);
-  }
-  100% {
-    background-color: #cfcccc;
-  }
-}
-
 .end-game__ok {
   width: 100px;
   height: 40px;
@@ -245,6 +258,42 @@ p {
   left: 0; 
   right: 0;
   z-index: 1;
+}
+
+.records {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: PressStart2P, sans-serif;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.5s;
+}
+
+.records.show {
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
+.records__classic,
+.records__challenge {
+  width: 45%;
+}
+
+.records__classic-title,
+.records__challenge-title {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .footer {

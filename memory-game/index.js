@@ -10,6 +10,12 @@ const endGameContainer = document.querySelector('.end-game');
 const endGameOk = document.querySelector('.end-game__ok');
 const endGameMessage = document.querySelector('.end-game__message');
 const endGameResult = document.querySelector('.end-game__result');
+const endGameTopContainer = document.querySelector('.end-game__top');
+const endGameTopInput = document.querySelector('.end-game__top-name');
+const recordsContainer = document.querySelector('.records');
+const classicTable = document.querySelector('.records__classic-table');
+const challengeTable = document.querySelector('.records__challenge-table');
+const recordsButton = document.querySelector('.records-button');
 let classic = true;
 let hasFlippedCard = false;
 let lockButton = false;
@@ -19,7 +25,41 @@ let matchCounter = 0;
 let tryCounter = 0;
 let userScore = 4;
 let points = 0;
+let playerName = '';
+/*
+let classicHiScores = [
+                    {player: '', moves: 0},
+                    {player: 'Ben', moves: 29},
+                    {player: 'Charlie', moves: 30},
+                    {player: 'David', moves: 30},
+                    {player:'Evan', moves: 31},
+                    {player:'Frank', moves: 31},
+                    {player: 'George', moves: 31},
+                    {player: 'Henry', moves: 32}, 
+                    {player:'Ida', moves: 34},
+                    {player: 'John', moves: 36}
+];
+let challengeHiScores = [
+                    {player: 'Anna', score: 6},
+                    {player: 'Ben', score: 5},
+                    {player: 'Charlie', score: 5},
+                    {player: 'David', score: 5},
+                    {player:'Evan', score: 3},
+                    {player:'Frank', score: 3},
+                    {player: 'George', score: 3},
+                    {player: 'Henry', score: 3}, 
+                    {player:'Ida', score: 2},
+                    {player: 'John', score: 1}
+];
+*/
+let classicHiScores = [];
+let challengeHiScores = [];
 
+function updateScoreTable(scores) {
+  if (scores.length < 10) {
+
+  }
+}
 
 function flipCard(e) {
   if (lockBoard) return;
@@ -75,14 +115,33 @@ function endGame() {
     lockBoard = true;
     endGameOk.classList.add('active');
   } else {
+    endGameMessage.textContent = 'Congratulations!';
     if (classic) {
-      endGameMessage.textContent = 'Congratulations!';
       endGameResult.textContent = `Total moves: ${tryCounter}`;
-      endGameOk.classList.add('active');
+      if (classicHiScores < 10) {
+        endGameTopContainer.classList.add('show');
+      }
+    } else {
+      endGameResult.textContent = `Total score: ${userScore}`;
     }
+    endGameOk.classList.add('active');
   }
   mask.classList.add('show');
   endGameContainer.classList.add('show');
+}
+
+function populateTable() {
+  classicTable.innerHTML = '';
+  classicTable.innerHTML = '<tr><td>#</td><td>Player</td><td>Moves</td></tr>' + 
+  classicHiScores.map((row, index) => {
+    return `<tr><td>${index + 1}</td><td>${row.player}</td><td>${row.moves}</td></tr>`;
+  }).join('');
+
+  challengeTable.innerHTML = '';
+  challengeTable.innerHTML = '<tr><td>#</td><td>Player</td><td>Score</td></tr>' + 
+  challengeHiScores.map((row, index) => {
+    return `<tr><td>${index + 1}</td><td>${row.player}</td><td>${row.score}</td></tr>`;
+  }).join('');
 }
 
 function resetBoard() {
@@ -196,15 +255,17 @@ challengeGame.addEventListener('click', () => {
   resetGame();
 });
 
-popNumber.addEventListener('animationend', () => {
-  popNumber.classList.remove('animate');
-});
-
 endGameOk.addEventListener('click', () => {
   endGameContainer.classList.remove('show');
   mask.classList.remove('show');
   endGameOk.classList.remove('active');
   endGameResult.textContent = '';
   score.classList.remove('hide');
+  endGameTopContainer.classList.remove('show');
   classicGame.click();
+});
+
+recordsButton.addEventListener('click', () => {
+  populateTable();
+  recordsContainer.classList.toggle('show');
 });
