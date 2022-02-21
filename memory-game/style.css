@@ -1,0 +1,387 @@
+@font-face {
+  font-family: PressStart2P;
+  font-weight: 400;
+  src: url('./assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf');
+}
+
+@keyframes button-color-in {
+  0% {
+    background-color: #cfcccc;
+  }
+  100% {
+    background-color: rgb(252, 252, 48);
+  }
+}
+
+@keyframes button-color-out {
+  0% {
+    background-color: rgb(252, 252, 48);
+  }
+  100% {
+    background-color: #cfcccc;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: rgb(77, 75, 75);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  user-select: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: PressStart2P, sans-serif;
+  font-size: 0.7rem;
+  outline: none;
+}
+
+p {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  height: 80%;
+  color: white;
+}
+
+td {
+  text-align: center;
+  vertical-align: top;
+}
+
+.buttons {
+  width: 100%;
+  height: 7vh;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.button {
+  width: 15%;
+  border-radius: 8px;
+  border: none;
+  background-color: #cfcccc;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: #e7e4e4;
+  transition: all 0.3s;
+}
+
+.classic-game,
+.challenge-game {
+  transition: all 0.3s;
+}
+
+.classic-game.active,
+.challenge-game.active {
+  background-color: #ecd3f7;
+  transition: all 0.3s;
+}
+
+.records-button.active {
+  animation: button-color-in 1s ease, button-color-out 1s ease;
+  animation-delay: 0, 1s;
+  animation-iteration-count: infinite;
+}
+
+.score {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  font-family: PressStart2P, sans-serif;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  visibility: visible;
+}
+
+.score.hide {
+  visibility: hidden;
+}
+
+.score__number {
+  height: 100%;
+  position: relative;
+  border: none;
+}
+
+.pop {
+  position: absolute;
+  top: 50%;
+  color: white;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.pop.animate {
+  visibility: visible;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.game {
+  width: 100%;
+}
+
+.cards {
+  width: 60%;
+  height: calc((100vw)/3);
+  margin: 0 auto;
+  display: grid;
+  padding: 15px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  perspective: 1000px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: scale(1);
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: all 0.2s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+  cursor: default;
+}
+
+.card-image-front,
+.card-image-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  background: #d084ee ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+.card-image-front {
+  transform: rotateY(180deg);
+  background: white;
+}
+
+.front-face {
+  width: 70%;
+  height: 70%;
+}
+
+.back-face {
+  width: 60%;
+  height: 60%;
+}
+
+.back-face {
+  filter: invert(74%) sepia(92%) saturate(2891%) hue-rotate(221deg) brightness(95%) contrast(96%) drop-shadow(2px 1px 2px rgb(240, 197, 240));
+}
+
+.end-game {
+  display: none;
+}
+
+.end-game.show {
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  color: white;
+  font-family: PressStart2P, sans-serif;
+  font-size: 13px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.end-game__top {
+  display: none;
+}
+
+.end-game__top.show {
+  display: block;
+}
+
+.end-game__top-name {
+  height: 30px;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 8px;
+  font-family: PressStart2P, sans-serif;
+  font-size: 13px;
+}
+
+.end-game__ok {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: #cfcccc;
+}
+
+.end-game__ok.active {
+  animation: button-color-in 1s ease, button-color-out 1s ease;
+  animation-delay: 0, 1s;
+  animation-iteration-count: infinite;
+}
+
+.mask.show {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  right: 0;
+  z-index: 1;
+}
+
+.records {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: PressStart2P, sans-serif;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.5s;
+}
+
+.records.show {
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
+.records__classic,
+.records__challenge {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.records__classic-title,
+.records__challenge-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #3a3939;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+.footer__logo {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+@media not all and (hover: none) {
+  .footer__logo:hover {
+    filter: invert(74%) sepia(92%) saturate(2891%) hue-rotate(221deg) brightness(95%) contrast(96%) drop-shadow(1px 1px 0 rgb(0 0 0 / 0.4));;
+    transition: all 0.5s;
+  }
+}
+
+.github {
+  width: 50px;
+  height: auto;
+}
+
+.github__logo {
+  filter: invert(61%) sepia(0%) saturate(1298%) hue-rotate(194deg) brightness(93%) contrast(86%) drop-shadow(1px 1px 0 rgb(0 0 0 / 0.4));;
+}
+
+.copyright {
+  display: block;
+  width: 100px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #8D8D8D;
+  font-family: PressStart2P, sans-serif;
+}
+
+.rs-school {
+  width: 100px;
+  height: auto;
+}
+
+.rs-school__logo {
+  filter: invert(61%) sepia(0%) saturate(1298%) hue-rotate(194deg) brightness(93%) contrast(86%) drop-shadow(1px 1px 0 rgb(0 0 0 / 0.4));;
+}
+
+@media (max-width: 768px) {
+  .button {
+    width: 25%;
+    font-size: 0.4rem;
+  }
+
+  .cards {
+    width: 90%;
+    grid-template-columns: repeat(4, 1fr);
+    height: 65vh;
+  }
+}
+
+
+
+
+
