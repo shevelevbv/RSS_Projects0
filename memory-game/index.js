@@ -116,6 +116,9 @@ function endGame() {
     endGameMessage.textContent = 'Congratulations!';
     if (classic) {
       endGameResult.textContent = `Total moves: ${tryCounter}`;
+      if (classicHiScores.length === 10 && tryCounter < classicHiScores[classicHiScores.length - 1].moves) {
+        classicHiScores.pop();
+      }
       if (classicHiScores.length < 10) {
         lockOkButton = true;
         topScore = true;
@@ -123,6 +126,9 @@ function endGame() {
       }
     } else {
       endGameResult.textContent = `Total score: ${userScore}`;
+      if (challengeHiScores.length === 10 && userScore > challengeHiScores[challengeHiScores.length - 1].score) {
+        challengeHiScores.pop();
+      }
       if (challengeHiScores.length < 10) {
         lockOkButton = true;
         topScore = true;
@@ -156,13 +162,13 @@ function resetBoard() {
 function resetGame() {
   tryCounter = 0;
   matchCounter = 0;
+  userScore = 4;
 
   if (classic) {
     lockBoard = false;
     scoreTitle.textContent = 'Moves:';
     scoreScreen.textContent = tryCounter;
   } else {
-    userScore = 4;
     points = 0;
     scoreTitle.textContent = 'Score:';
     scoreScreen.textContent = userScore;
@@ -223,16 +229,15 @@ function updateScore(sign) {
 
 function setLocalStorage() {
   localStorage.setItem('classicHiScores', JSON.stringify(classicHiScores));
-  localStorage.setItem('challengeHiScores', challengeHiScores);
+  localStorage.setItem('challengeHiScores', JSON.stringify(challengeHiScores));
 }
 
 function getLocalStorage() {
   if (localStorage.getItem('classicHiScores')) {
     classicHiScores = JSON.parse(localStorage.getItem('classicHiScores'));
-    console.log(classicHiScores[0]);
   }
   if (localStorage.getItem('challengeHiScores')) {
-    challengeHiScores = localStorage.getItem('challengeHiScores');
+    challengeHiScores = JSON.parse(localStorage.getItem('challengeHiScores'));
   }
 }
 
@@ -261,6 +266,9 @@ function showAll() {
 
 function updateScores() {
   let object = {};
+  if (playerName.length > 8) {
+    playerName = playerName.substring(0, 8);
+  }
   object.player = playerName;
   if (classic) {
     object.moves = tryCounter;
