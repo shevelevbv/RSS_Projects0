@@ -19,6 +19,7 @@ const recordsButton = document.querySelector('.records-button');
 let classic = true;
 let hasFlippedCard = false;
 let lockButton = false;
+let lockButtons = false;
 let lockOkButton = false;
 let firstCard, secondCard;
 let lockBoard = false;
@@ -28,33 +29,6 @@ let tryCounter = 0;
 let userScore = 4;
 let points = 0;
 let playerName = '';
-let scoreChanged = false;
-/*
-let classicHiScores = [
-                    {player: '', moves: 0},
-                    {player: 'Ben', moves: 29},
-                    {player: 'Charlie', moves: 30},
-                    {player: 'David', moves: 30},
-                    {player:'Evan', moves: 31},
-                    {player:'Frank', moves: 31},
-                    {player: 'George', moves: 31},
-                    {player: 'Henry', moves: 32}, 
-                    {player:'Ida', moves: 34},
-                    {player: 'John', moves: 36}
-];
-let challengeHiScores = [
-                    {player: 'Anna', score: 6},
-                    {player: 'Ben', score: 5},
-                    {player: 'Charlie', score: 5},
-                    {player: 'David', score: 5},
-                    {player:'Evan', score: 3},
-                    {player:'Frank', score: 3},
-                    {player: 'George', score: 3},
-                    {player: 'Henry', score: 3}, 
-                    {player:'Ida', score: 2},
-                    {player: 'John', score: 1}
-];
-*/
 let classicHiScores = [];
 let challengeHiScores = [];
 
@@ -164,7 +138,6 @@ function populateTable() {
     return `<tr><td>${index + 1}</td><td>${row.player}</td><td>${row.score}</td></tr>`;
   }).join('') + challengeEmptyRows;
 
-  scoreChanged = false;
 }
 
 function resetBoard() {
@@ -292,7 +265,6 @@ function updateScores() {
     challengeHiScores.push(object);
     challengeHiScores.sort((a, b) => b.score - a.score);
   }
-  scoreChanged = true;
 }
 
 scoreScreen.textContent = tryCounter;
@@ -301,11 +273,17 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 classicGame.addEventListener('click', () => {
   if (lockButton) return;
+  if (lockButtons) return;
+  classicGame.classList.add('active');
+  challengeGame.classList.remove('active');
   classic = true;
   resetGame();
 });
 
 challengeGame.addEventListener('click', () => {
+  if (lockButtons) return;
+  challengeGame.classList.add('active');
+  classicGame.classList.remove('active');
   classic = false;
   resetGame();
 });
@@ -327,9 +305,9 @@ endGameOk.addEventListener('click', () => {
 });
 
 recordsButton.addEventListener('click', () => {
-  if (scoreChanged) {
-    populateTable();
-  }
+  lockButtons = lockButtons ? false : true;
+  populateTable();
+  recordsButton.classList.toggle('active');
   recordsContainer.classList.toggle('show');
 });
 
