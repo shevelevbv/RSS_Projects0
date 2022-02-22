@@ -24,6 +24,7 @@ let lockOkButton = false;
 let firstCard, secondCard;
 let lockBoard = false;
 let topScore = false;
+let scoreChanged = true;
 let matchCounter = 0;
 let tryCounter = 0;
 let userScore = 4;
@@ -95,9 +96,7 @@ function endGame() {
         classicHiScores.pop();
       }
       if (classicHiScores.length < 10) {
-        lockOkButton = true;
-        topScore = true;
-        endGameTopContainer.classList.add('show');
+        handleTopScore();
       }
     } else {
       endGameResult.textContent = `Total score: ${userScore}`;
@@ -105,14 +104,22 @@ function endGame() {
         challengeHiScores.pop();
       }
       if (challengeHiScores.length < 10) {
-        lockOkButton = true;
-        topScore = true;
-        endGameTopContainer.classList.add('show');
+        handleTopScore();
       }
     } 
   }
   mask.classList.add('show');
   endGameContainer.classList.add('show');
+}
+
+function handleTopScore() {
+  lockOkButton = true;
+  topScore = true;
+  endGameTopContainer.classList.add('show');
+  setTimeout(() => {
+    endGameTopInput.focus();
+  }, 100);
+  endGameTopInput.dispatchEvent(new Event('input'));
 }
 
 function populateTable() {
@@ -137,6 +144,8 @@ function populateTable() {
   challengeHiScores.map((row, index) => {
     return `<tr><td>${index + 1}</td><td>${row.player}</td><td>${row.score}</td></tr>`;
   }).join('') + challengeEmptyRows;
+
+  scoreChanged = false;
 
 }
 
@@ -252,9 +261,6 @@ function showAll() {
 
 function updateScores() {
   let object = {};
-  if (playerName.length > 8) {
-    playerName = playerName.substring(0, 8);
-  }
   object.player = playerName;
   if (classic) {
     object.moves = tryCounter;
@@ -265,6 +271,7 @@ function updateScores() {
     challengeHiScores.push(object);
     challengeHiScores.sort((a, b) => b.score - a.score);
   }
+  scoreChanged = true;
 }
 
 scoreScreen.textContent = tryCounter;
@@ -306,7 +313,9 @@ endGameOk.addEventListener('click', () => {
 
 recordsButton.addEventListener('click', () => {
   lockButtons = lockButtons ? false : true;
-  populateTable();
+  if (scoreChanged) {
+    populateTable();
+  }
   recordsButton.classList.toggle('active');
   recordsContainer.classList.toggle('show');
 });

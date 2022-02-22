@@ -121,6 +121,10 @@ td {
   visibility: hidden;
 }
 
+.score__title {
+  border: none;
+}
+
 .score__number {
   height: 100%;
   position: relative;
